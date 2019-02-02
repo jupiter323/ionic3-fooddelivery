@@ -49,7 +49,7 @@ export class HomePage {
       map: this.map,
       animation: google.maps.Animation.DROP,
       position: this.map.getCenter(),
-      icon: "assets/imgs/marker.png"
+      icon: "assets/icon/marker.png"
       
     });
 

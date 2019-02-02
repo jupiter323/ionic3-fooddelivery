@@ -83,21 +83,21 @@ ion-row {
 }
 
 ion-content.back-image-first {
-    background-image: url("../../assets/imgs/onboarding.png");
+    background-image: url("../../assets/imgs/onboarding.png")!important;
 }
 
 ion-content.back-image-second {
-    background-image: url("../../assets/imgs/onboarding1.png");
+    background-image: url("../../assets/imgs/onboarding1.png")!important;
 }
 
 ion-content.back-image-third {
-    background-image: url("../../assets/imgs/onboarding2.png");
+    background-image: url("../../assets/imgs/onboarding2.png")!important;
 }
 
 ion-content {
     background-size: cover;
     position: relative;
-    background: #E5E5E5 !important;
+    
     .card-board {
         width: 85vw;
         margin: auto;
