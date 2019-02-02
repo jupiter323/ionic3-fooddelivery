@@ -1,0 +1,210 @@
+page-login {
+    ion-content {
+        .card-board {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.35);
+            border-radius: 20px;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 70vh;
+            margin-top: 10vh;
+            ion-row.top-logo {
+                justify-content: center;
+            }
+            .form {
+                width: 100%;
+                margin-bottom: 20px;
+                ion-row {
+                    border-bottom: 1px solid #C2BEBE;
+                    justify-content: center;
+                    align-items: center;
+                    ion-icon {
+                        float: right; // margin-right: 0;
+                        text-align: right;
+                        color: #8B8B8B;
+                        font-size: 22px;
+                        font-weight: bold;
+                    }
+                    ion-input {
+                        float: left;
+                        font-family: Roboto;
+                        font-style: normal;
+                        font-weight: 300;
+                        font-size: 18px;
+                        letter-spacing: 0.241177px;
+                        color: #8B8B8B;
+                    }
+                }
+                button {
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+                }
+            }
+            .welcome {
+                /* Welcome */
+                font-family: Roboto;
+                font-style: italic;
+                font-weight: 500;
+                line-height: 33px;
+                font-size: 18px;
+                letter-spacing: 0.265294px;
+                color: #545454;
+            }
+            .forgot {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 20px;
+                font-size: 14px;
+                letter-spacing: 0.144706px;
+                color: #8B8B8B;
+            }
+            .cross-line {
+                width: 100%; // height: 0px;
+                height: 20px;
+                margin-bottom: 20px;
+                border-bottom: 0.3px solid rgba($color: black, $alpha: 0.7);
+                position: relative;
+                text-align: center;
+                span {
+                    position: absolute;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 11px;
+                    font-size: 12px;
+                    letter-spacing: 0.144706px;
+                    color: #8B8B8B;
+                    top: 14px;
+                    width: 20px;
+                    background: white;
+                }
+            }
+            .facebook-handle {
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                span {
+                    /* Login With Facebook */
+                    height: 20px;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 20px;
+                    font-size: 22px;
+                    letter-spacing: 0.180882px;
+                    color: #5179AF;
+                    padding-left: 5px;
+                }
+            }
+        }
+        .card-board.email {
+            height: 80vh;
+        }
+        .card-board.facebook {
+            .des {
+                /* Mobile Number */
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 25px;
+                font-size: 22px;
+                text-align: center;
+                letter-spacing: 0.253235px;
+                color: #545454;
+            }
+            .form {
+                margin-top: 5vh;
+                .normal-btn {
+                    margin-top: 15vh;
+                }
+            }
+        }
+        .card-board.phoneverify {
+            height: 78vh;
+            .des {
+                /* Mobile Number */
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 25px;
+                font-size: 22px;
+                text-align: center;
+                letter-spacing: 0.253235px;
+                color: #545454;
+            }
+            .sub-des {
+                /* Mobile Number */
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 300;
+                line-height: 15px;
+                font-size: 18px;
+                text-align: center;
+                letter-spacing: 0.192941px;
+                margin-top: 5vh;
+                color: #8B8B8B;
+            }
+            .form {
+                ion-row {
+                    width: 60%;
+                    margin: auto;
+                    border-bottom: unset !important;
+                    justify-content: center;
+                    align-items: center;
+                    ion-input {
+                        width: 100%;
+                        font-family: Roboto;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 38px;
+                        font-size: 20px;
+                        text-align: center;
+                        color: #8B8B8B;
+                        border-bottom: 1px solid #C2BEBE;
+                        input {
+                            margin: auto;
+                            text-align: center;
+                        }
+                    }
+                }
+                .resend {
+                    /* Mobile Number */
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 17px;
+                    font-size: 20px;
+                    text-align: center;
+                    letter-spacing: 0.192941px;
+                    color: #8B8B8B;
+                    margin-top: 5vh
+                }
+            }
+        }
+        .bottom-handle {
+            /* Group bottom */
+            position: absolute;
+            bottom: 5.54%;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            justify-content: center;
+            .des {
+                /* Create an account? */
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                letter-spacing: 0.180882px;
+                color: #FFFFFF;
+            }
+            .signup {
+                /* SIGN UP */
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 22px;
+                letter-spacing: 0.229118px;
+                color: #FFFFFF;
+            }
+        }
+    }
+}

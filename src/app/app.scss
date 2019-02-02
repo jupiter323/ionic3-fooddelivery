@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,113 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@font-face {
+    font-family: 'Cairo';
+    src: url('../assets/fonts/Cairo.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Medium.ttf') format("truetype");
+}
+
+ion-header.header-md {
+    .header-row {
+        .header-title {
+            span {
+                margin-left: 40px;
+            }
+        }
+    }
+}
+
+ion-header {
+    background: #228D8C !important;
+    color: white;
+    .header-title {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        align-items: center;
+        ion-icon {
+            margin-left: 15px;
+            font-size: 27px;
+        }
+        span {
+            margin: auto;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 17px;
+            font-size: 22px;
+            letter-spacing: 0.205px;
+        }
+    }
+    .right-icon {
+        margin-left: -20px;
+    }
+}
+
+ion-row {
+    width: 100%;
+}
+
+.normal-btn {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* Font */
+    text-transform: capitalize;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    letter-spacing: 0.265294px;
+    color: #FFFFFF;
+}
+
+.full-height {
+    height: 100%;
+}
+
+ion-content.back-image-first {
+    background-image: url("../../assets/imgs/onboarding.png");
+}
+
+ion-content.back-image-second {
+    background-image: url("../../assets/imgs/onboarding1.png");
+}
+
+ion-content.back-image-third {
+    background-image: url("../../assets/imgs/onboarding2.png");
+}
+
+ion-content {
+    background-size: cover;
+    position: relative;
+    background: #E5E5E5 !important;
+    .card-board {
+        width: 85vw;
+        margin: auto;
+        background: #FFFFFF;
+        border-radius: 13px;
+        text-align: center;
+        padding: 20px;
+    }
+    .bottom-layer-dark {
+        position: absolute;
+        width: 100%;
+        height: 20vh;
+        z-index: -1;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(360deg, #000000 20.28%, rgba(0, 0, 0, 0) 93.09%);
+    }
+    div.segment {
+        width: 100%;
+        background: #FFFFFF;
+        box-shadow: 0px 1px 2px rgba(149, 149, 149, 0.5);
+        border-radius: 3px;
+    }
+}

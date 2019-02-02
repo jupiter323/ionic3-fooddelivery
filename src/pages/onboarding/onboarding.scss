@@ -1,0 +1,61 @@
+page-onboarding {
+    
+    ion-content {
+       
+        .lang-change {
+            /* عربي */
+            position: absolute;
+            height: 26px;
+            right: 4%;
+            top: 20px;
+            font-family: Cairo;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 26px;
+            font-size: 18px;
+            text-align: right;
+            color: #FFFFFF;
+        }
+        
+        .card-board {           
+            margin-top: 45vh;     
+            height: 55vh;
+            .title {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 41px;
+                font-size: 25px;
+                letter-spacing: 0.361765px;
+                color: #228D8C;
+            }
+            .des {
+                margin-top: 10px;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 25px;
+                font-size: 13px;
+                text-align: center;
+                letter-spacing: -0.18px;
+                color: #545454;
+            }
+            .dot {
+                margin: auto;
+                padding: 25px;
+            }
+            .skip {
+                /* SKIP */
+                margin-right: -5px;
+                float: right;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 15px;
+                font-size: 14px;
+                letter-spacing: 0.168824px;
+                color: #545454;
+            }
+        }
+    }
+}
