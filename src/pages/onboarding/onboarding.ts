@@ -46,7 +46,7 @@ export class OnboardingPage {
   }
 
   goLogin() {
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }

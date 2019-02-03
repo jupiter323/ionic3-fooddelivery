@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { AddressPage } from '../address/address';
 
 /**
  * Generated class for the LoginPage page.
@@ -28,7 +28,7 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
   logForm() {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.setRoot(AddressPage);
     let alert = this.altCtrl.create({
       title: 'Error',
       message: 'Mobile number or password is wrong ',

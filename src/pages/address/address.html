@@ -1,0 +1,113 @@
+<!--
+  Generated template for the AddressPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-row class="header-row">
+    <ion-row class="header-title">
+      <ion-col col-1>
+        <!-- <ion-icon name="ios-arrow-back" (click)="navCtrl.pop()"></ion-icon> -->
+      </ion-col>
+      <span>
+        ZainEats
+      </span>
+      <ion-col col-1></ion-col>
+    </ion-row>
+  </ion-row>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!registeredStats" class="segment">
+    <ion-label class="title">Address Information</ion-label>
+    <div #map id="map"></div>
+    <div class="detail">
+      <ion-label class="sub-title">Choose Address</ion-label>
+      <ion-row>
+        <ion-col col-5 no-padding>
+          <ion-select [(ngModel)]="addressInfo.city" placeholder="City" okText="Done" cancelText="Dismiss">
+            <ion-option *ngFor="let city of cities">{{city}}</ion-option>
+          </ion-select>
+        </ion-col>
+        <ion-col col-2></ion-col>
+        <ion-col col-5 no-padding>
+          <ion-select [(ngModel)]="addressInfo.area" placeholder="Area" okText="Done" cancelText="Dismiss">
+            <ion-option *ngFor="let area of areas">{{area}}</ion-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+      <ion-label class="sub-title">Additional Address Information</ion-label>
+      <ion-input type="text" placeholder="Enter text" [ngModel]="addressInfo.additional"></ion-input>
+      <ion-label class="sub-title">Address Title</ion-label>
+      <ion-input type="text" placeholder="Enter text" [ngModel]="addressInfo.title"></ion-input>
+    </div>
+  </div>
+  <div *ngIf="registeredStats" class="segment">
+    <ion-label class="title">Address Information</ion-label>
+    <ion-list>
+      <ion-item class="sub-title" padding *ngFor="let address of addressList;let addressIndex=index">
+        <div class="item-head" (click)="toggleDetails(address)">
+          {{address.city}} {{address.area}}
+          <ion-icon color="primary" [name]="address.icon"></ion-icon>
+        </div>
+
+        <div *ngIf="address.showDetails">
+          <div [ngClass]="title.selected?'sub-des selected':'sub-des'" *ngFor="let title of address.titles;let titleIndex=index">
+            <ion-row (click)="pressedTitle(addressIndex,titleIndex)">
+              <ion-col col-11>
+                {{title.title}}<p></p>
+                <span text-wrap>{{title.additional}}</span>
+              </ion-col>
+              <ion-col col-1>
+                <!-- selected title -->
+                <svg *ngIf="title.selected" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+                    fill="#228D8C" stroke="#228D8C" stroke-width="2" />
+                  <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="7" y="8" width="11" height="8">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7 8H18V16H7" fill="white" />
+                  </mask>
+                  <g mask="url(#mask0)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.1572 13.0569C11.2118 12.993 11.2503 12.94 11.2967 12.8949C12.8454 11.3869 14.3942 9.87895 15.9449 8.37289C16.4545 7.87796 17.2035 7.87658 17.6772 8.36357C18.0987 8.79695 18.1088 9.47505 17.6996 9.92318C17.6559 9.97104 17.6083 10.0157 17.5618 10.061C15.6358 11.9348 13.7098 13.8086 11.7836 15.6822C11.3504 16.1037 10.9291 16.1067 10.4967 15.6866C9.45136 14.6711 8.40659 13.6552 7.36443 12.6367C6.99535 12.2759 6.90207 11.7847 7.10537 11.3385C7.30469 10.9012 7.75266 10.632 8.25403 10.657C8.57579 10.6731 8.84092 10.811 9.06689 11.0319C9.71374 11.6643 10.3634 12.2941 11.0121 12.9246C11.0503 12.9617 11.0907 12.9965 11.1572 13.0569Z"
+                      fill="white" />
+                  </g>
+                </svg>
+              </ion-col>
+            </ion-row>
+          </div>
+
+
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button class="add-btn" outline>+ Add New Address</button>
+  </div>
+  <div class="segment">
+    <ion-label class="title">Choose Cuisine</ion-label>
+    <ion-row class="cuisine-row">
+      <ion-col col-4>
+        <button ion-button [ngClass]="selectedCuisine[0]?'selected-btn':'unselected-btn'" (click)="selected(0)">All</button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button [ngClass]="selectedCuisine[1]?'selected-btn':'unselected-btn'" (click)="selected(1)">Chinese</button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button [ngClass]="selectedCuisine[2]?'selected-btn':'unselected-btn'" (click)="selected(2)">Pizza</button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="cuisine-row">
+      <ion-col col-4>
+        <button ion-button [ngClass]="selectedCuisine[3]?'selected-btn':'unselected-btn'" (click)="selected(3)">Homemade</button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button [ngClass]="selectedCuisine[4]?'selected-btn':'unselected-btn'" (click)="selected(4)">Indian</button>
+      </ion-col>
+      <ion-col col-4>
+        <button ion-button [ngClass]="selectedCuisine[5]?'selected-btn':'unselected-btn'" (click)="selected(5)">Arabic</button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <p></p>
+  <button ion-button class="normal-btn" (click)="pressedDone()">Done</button>
+</ion-content>

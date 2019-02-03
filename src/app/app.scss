@@ -35,26 +35,29 @@ ion-header.header-md {
 ion-header {
     background: #228D8C !important;
     color: white;
-    .header-title {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        align-items: center;
-        ion-icon {
-            margin-left: 15px;
-            font-size: 27px;
+    .header-row {
+        height: 10vh;
+        .header-title {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            align-items: center;
+            ion-icon {
+                margin-left: 15px;
+                font-size: 27px;
+            }
+            span {
+                margin: auto;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 17px;
+                font-size: 22px;
+                letter-spacing: 0.205px;
+            }
         }
-        span {
-            margin: auto;
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: normal;
-            line-height: 17px;
-            font-size: 22px;
-            letter-spacing: 0.205px;
+        .right-icon {
+            margin-left: -20px;
         }
-    }
-    .right-icon {
-        margin-left: -20px;
     }
 }
 
@@ -83,21 +86,20 @@ ion-row {
 }
 
 ion-content.back-image-first {
-    background-image: url("../../assets/imgs/onboarding.png")!important;
+    background-image: url("../../assets/imgs/onboarding.png") !important;
 }
 
 ion-content.back-image-second {
-    background-image: url("../../assets/imgs/onboarding1.png")!important;
+    background-image: url("../../assets/imgs/onboarding1.png") !important;
 }
 
 ion-content.back-image-third {
-    background-image: url("../../assets/imgs/onboarding2.png")!important;
+    background-image: url("../../assets/imgs/onboarding2.png") !important;
 }
 
 ion-content {
     background-size: cover;
     position: relative;
-    
     .card-board {
         width: 85vw;
         margin: auto;
@@ -120,5 +122,149 @@ ion-content {
         background: #FFFFFF;
         box-shadow: 0px 1px 2px rgba(149, 149, 149, 0.5);
         border-radius: 3px;
+        padding-bottom: 15px;
+        ion-label.title {
+            /* Label Copy 2 */
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 22px;
+            font-size: 22px;
+            letter-spacing: -0.282353px;
+            color: #545454;
+            padding: 13px;
+            padding-bottom: 0;
+        }
+        div.detail {
+            padding: 0px 13px 13px 13px;
+            ion-select {
+                width: 100%;
+                padding: 0 10px 0px 0;
+                max-width: 100%;
+                height: 20px;
+                border-bottom: 0.5px solid #C2BEBE;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 19px;
+                font-size: 18px;
+                letter-spacing: -0.282353px;
+                color: #228D8C;
+                .select-placeholder {
+                    /* Label Copy 6 */
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 19px;
+                    font-size: 18px;
+                    letter-spacing: -0.282353px;
+                    color: #8B8B8B;
+                }
+            }
+            ion-input {
+                border: 0.5px solid #C2BEBE;
+                box-sizing: border-box;
+                border-radius: 3px;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 19px;
+                font-size: 22px;
+                letter-spacing: -0.282353px;
+                color: #228D8C;
+                ::-webkit-input-placeholder {
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 17px;
+                    font-size: 18px;
+                    letter-spacing: -0.408px;
+                    color: #C2BEBE;
+                }
+            }
+        }
+        .sub-title {
+            /* Label Copy 2 */
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 22px;
+            font-size: 14px;
+            letter-spacing: -0.282353px;
+            color: #545454;
+        }
+        .cuisine-row {
+            padding: 0 10px 0 10px;
+            .selected-btn {
+                width: 100%;
+                height: 30px;
+                border-radius: 15px;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 22px;
+                font-size: 12px;
+                letter-spacing: -0.282353px;
+                color: #FFFFFF;
+            }
+            .unselected-btn {
+                width: 100%;
+                height: 30px;
+                border-radius: 15px;
+                background: white;
+                border: 2px solid #8B8B8B;
+                color: #8B8B8B;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 22px;
+                font-size: 12px;
+                letter-spacing: -0.282353px;
+            }
+        }
+        .add-btn {
+            height: 30px;
+            border-radius: 15px !important;
+            width: 60%;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 21px;
+            font-size: 14px;
+            letter-spacing: 0.265294px;
+            color: #228D8C;
+            text-transform: capitalize;
+            margin-left: 20% !important;
+        }
+        ion-list {
+            margin-top: 20px !important;
+            ion-item {
+                padding: 0 !important;
+                .item-head {
+                    padding: 15px;
+                    justify-content: space-between;
+                    ion-icon {
+                        float: right;
+                    }
+                }
+                .item-inner {
+                    ion-label {
+                        padding: 0 !important;
+                        margin: 0 !important;
+                    }
+                    padding: 0 !important;
+                }
+                .sub-des {
+                    text-align: justify;
+                    letter-spacing: -0.336px;
+                    color: #8B8B8B;
+                    border-top: 0.1px solid #C2BEBE;
+                    padding: 15px;
+                }
+                .selected {
+                    background: #F9F9F9;
+                }
+            }
+        }
     }
 }

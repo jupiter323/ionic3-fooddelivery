@@ -12,6 +12,7 @@ import { OnboardingPage } from '../pages/onboarding/onboarding';
 import { GloabalProvider } from '../providers/gloabal/gloabal';
 import { LoginPage } from '../pages/login/login';
 import { Geolocation } from '@ionic-native/geolocation';
+import { AddressPage } from '../pages/address/address';
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -20,7 +21,8 @@ export function createTranslateLoader(http: Http) {
     MyApp,
     HomePage,
     OnboardingPage,
-    LoginPage
+    LoginPage,
+    AddressPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ export function createTranslateLoader(http: Http) {
     MyApp,
     HomePage,
     OnboardingPage,
-    LoginPage
+    LoginPage,
+    AddressPage
   ],
   providers: [
     StatusBar,
