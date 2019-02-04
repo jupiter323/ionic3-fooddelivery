@@ -38,11 +38,11 @@ ion-header {
     .header-row {
         height: 10vh;
         .header-title {
-            padding-top: 20px;
-            padding-bottom: 20px;
+            // padding-top: 20px;
+            // padding-bottom: 20px;
             align-items: center;
-            ion-icon {
-                margin-left: 15px;
+            .left-icon {
+                float: right;
                 font-size: 27px;
             }
             span {
@@ -54,9 +54,10 @@ ion-header {
                 font-size: 22px;
                 letter-spacing: 0.205px;
             }
-        }
-        .right-icon {
-            margin-left: -20px;
+            .right-icon {
+                float: left;
+                font-size: 27px;
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
 import { HomePage } from '../home/home';
 
@@ -18,26 +18,29 @@ declare var google;
 })
 export class AddressPage {
 
-  constructor(
-    public geoCtl: Geolocation,
-    public navCtrl: NavController) {
-
-  }
 
   @ViewChild('map') mapElement: ElementRef;
   registeredStats: boolean = false;
+  isAddNewAddress: boolean = false;
 
   map: any;
   latLng: any;
   isKM: any = 10000;
   isType: any = "city_hall";
   addressInfo: { city: string, area: string, additional: string, title: string } = { city: "", area: "", additional: "", title: "" }
-  cities = [];
-  areas = [];
+  cities = ["Adam", "Bdavi", "Emirate"];
+  areas = ["Cnad", "Liyad", "Cros"];
 
   selectedCuisine = [false, false, false, false, false, false];
 
   addressList: Array<{ city: string, area: string, titles: Array<{ title: string, additional: string, selected: boolean }>, icon: string, showDetails: boolean }> = [];
+
+  constructor(
+    public altCtrl: AlertController,
+    public geoCtl: Geolocation,
+    public navCtrl: NavController) {
+
+  }
 
   async ionViewDidLoad() {
     await this.getCurrentPosition();
@@ -59,6 +62,7 @@ export class AddressPage {
       });
     }
   }
+
   toggleDetails(data) {
     if (data.showDetails) {
       data.showDetails = false;
@@ -79,6 +83,49 @@ export class AddressPage {
         return xx;
       }
     })
+  }
+
+  saveAddAddress() {
+
+    if (!this.addressInfo.city || !this.addressInfo.area || !this.addressInfo.title || !this.addressInfo.additional) {
+
+      let alert = this.altCtrl.create({
+        title: 'Error',
+        message: '"Please enter correct info"',
+        buttons: [
+          {
+            text: 'OK',
+            handler: data => {
+              return;
+            }
+          }
+        ]
+      });
+      alert.present();
+    } else {
+      this.addressList.push({
+        city: this.addressInfo.city,
+        area: this.addressInfo.area,
+        titles: [{ title: this.addressInfo.title, selected: false, additional: this.addressInfo.additional }],
+        icon: 'ios-arrow-down',
+        showDetails: false
+      });
+      let alert = this.altCtrl.create({
+        title: 'Success',
+        message: `New Address "${this.addressInfo.title}" has been saved successfully`,
+        buttons: [
+          {
+            text: 'OK',
+            handler: data => {
+              this.isAddNewAddress = false;
+              this.addressInfo = { city: "", area: "", additional: "", title: "" }
+            }
+          }
+        ]
+      });
+      alert.present();
+    }
+
   }
   // page control
   pressedDone() {
@@ -135,8 +182,8 @@ export class AddressPage {
 
   }
 
-  nearbyPlace() {
-    let service = new google.maps.places.PlacesService(this.map);
+  async nearbyPlace() {
+    let service = await new google.maps.places.PlacesService(this.map);
     service.nearbySearch({
       location: this.latLng,
       radius: this.isKM,
@@ -146,6 +193,10 @@ export class AddressPage {
     });
   }
   callback(results, status) {
+    if (results.length != 0) {
+      this.cities = [];
+      this.areas = []
+    }
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       var splitedCities = [];
       var splitedAreas = [];

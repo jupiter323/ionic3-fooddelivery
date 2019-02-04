@@ -8,7 +8,7 @@
   <ion-row class="header-row">
     <ion-row class="header-title">
       <ion-col col-1>
-        <!-- <ion-icon name="ios-arrow-back" (click)="navCtrl.pop()"></ion-icon> -->
+        <ion-icon *ngIf="isAddNewAddress" name="ios-arrow-back" (click)="isAddNewAddress=false"></ion-icon>
       </ion-col>
       <span>
         ZainEats
@@ -19,9 +19,9 @@
 </ion-header>
 
 <ion-content padding>
-  <div *ngIf="!registeredStats" class="segment">
+  <div [hidden]="registeredStats&&!isAddNewAddress" class="segment">
     <ion-label class="title">Address Information</ion-label>
-    <div #map id="map"></div>
+    <div #map id="map" [ngClass]="{'addnew':isAddNewAddress}"></div>
     <div class="detail">
       <ion-label class="sub-title">Choose Address</ion-label>
       <ion-row>
@@ -38,12 +38,12 @@
         </ion-col>
       </ion-row>
       <ion-label class="sub-title">Additional Address Information</ion-label>
-      <ion-input type="text" placeholder="Enter text" [ngModel]="addressInfo.additional"></ion-input>
+      <ion-input type="text" placeholder="Enter text" [(ngModel)]="addressInfo.additional"></ion-input>
       <ion-label class="sub-title">Address Title</ion-label>
-      <ion-input type="text" placeholder="Enter text" [ngModel]="addressInfo.title"></ion-input>
+      <ion-input type="text" placeholder="Enter text" [(ngModel)]="addressInfo.title"></ion-input>
     </div>
   </div>
-  <div *ngIf="registeredStats" class="segment">
+  <div *ngIf="registeredStats&&!isAddNewAddress" class="segment">
     <ion-label class="title">Address Information</ion-label>
     <ion-list>
       <ion-item class="sub-title" padding *ngFor="let address of addressList;let addressIndex=index">
@@ -81,9 +81,9 @@
       </ion-item>
     </ion-list>
 
-    <button ion-button class="add-btn" outline>+ Add New Address</button>
+    <button ion-button class="add-btn" outline (click)="isAddNewAddress=true">+ Add New Address</button>
   </div>
-  <div class="segment">
+  <div *ngIf="!isAddNewAddress" class="segment">
     <ion-label class="title">Choose Cuisine</ion-label>
     <ion-row class="cuisine-row">
       <ion-col col-4>
@@ -109,5 +109,6 @@
     </ion-row>
   </div>
   <p></p>
-  <button ion-button class="normal-btn" (click)="pressedDone()">Done</button>
+  <button *ngIf="!isAddNewAddress" ion-button class="normal-btn" (click)="pressedDone()">Done</button>
+  <button *ngIf="isAddNewAddress" ion-button class="normal-btn" (click)="saveAddAddress()">Save Address</button>
 </ion-content>

@@ -12,7 +12,7 @@ import { AddressPage } from '../pages/address/address';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = AddressPage;
+  rootPage: any = HomePage;
 
   constructor(
     public translate: TranslateService,
