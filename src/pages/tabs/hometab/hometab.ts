@@ -1,12 +1,19 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-declare var google;
+/**
+ * Generated class for the HometabPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
+@IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-hometab',
+  templateUrl: 'hometab.html',
 })
-export class HomePage {
+export class HometabPage {
 
   expandedHeader: boolean = false;
   addressList = ["Address 1", "Address 2", "Address 3", "Address 4", "Address 5"];
@@ -18,7 +25,8 @@ export class HomePage {
     { kind: "Fast Food", name: "Salt Restaurant & Bar", background: "assets/imgs/onboarding.png", logo: "assets/imgs/logo1.png", distance: 3.00, time: 30, rate: 4.5 }
   ];
   offScreens = ["assets/imgs/offimage.png", "assets/imgs/offimage.png", "assets/imgs/offimage.png", "assets/imgs/offimage.png"]
-
+  offSlide:boolean = false;
+  orderStatus:boolean = false;
   constructor(
     public navCtrl: NavController) {
 

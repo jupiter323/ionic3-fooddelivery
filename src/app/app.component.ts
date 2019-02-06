@@ -8,11 +8,12 @@ import { OnboardingPage } from '../pages/onboarding/onboarding';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { LoginPage } from '../pages/login/login';
 import { AddressPage } from '../pages/address/address';
+import { TabsPage } from '../pages/tabs/tabs';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = HomePage;
+  rootPage: any = TabsPage;
 
   constructor(
     public translate: TranslateService,

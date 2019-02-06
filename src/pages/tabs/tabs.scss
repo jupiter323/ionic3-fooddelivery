@@ -1,0 +1,10 @@
+page-tabs {
+    a.tab-button {
+        position: relative;
+        ion-badge {
+            position: absolute;
+            border: 1px solid #FFFFFF;
+            right: 10px!important;
+        }
+    }
+}

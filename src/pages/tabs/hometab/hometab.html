@@ -1,3 +1,9 @@
+<!--
+  Generated template for the HometabPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
   <ion-row class="header-row">
     <ion-row class="header-title">
@@ -30,7 +36,7 @@
     </ion-label>
   </div>
 
-  <div class="order-status">
+  <div *ngIf="orderStatus" class="order-status">
     <ion-row class="title">
       <span>Order Status: </span>
       <span>Time Remaining </span>
@@ -41,7 +47,7 @@
     </ion-row>
   </div>
 
-  <ion-slides pager="true">
+  <ion-slides *ngIf="offSlide" pager="true">
     <ion-slide *ngFor="let off of offScreens">
       <img [src]="off">
     </ion-slide>

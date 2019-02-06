@@ -7,22 +7,22 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpModule, Http } from '@angular/http';
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 import { OnboardingPage } from '../pages/onboarding/onboarding';
 import { GloabalProvider } from '../providers/gloabal/gloabal';
 import { LoginPage } from '../pages/login/login';
 import { Geolocation } from '@ionic-native/geolocation';
 import { AddressPage } from '../pages/address/address';
+import { TabsPage } from '../pages/tabs/tabs';
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage,
+    MyApp,   
     OnboardingPage,
     LoginPage,
-    AddressPage
+    AddressPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -38,11 +38,11 @@ export function createTranslateLoader(http: Http) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage,
+    MyApp,   
     OnboardingPage,
     LoginPage,
-    AddressPage
+    AddressPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
