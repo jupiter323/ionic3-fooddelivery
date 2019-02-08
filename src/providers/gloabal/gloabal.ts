@@ -9,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class GloabalProvider {
   public isArabic: boolean = false;
+  private isTabBarHidden: boolean = false;
   constructor(public translate: TranslateService) {
     console.log('Hello GloabalProvider Provider');
     translate.setDefaultLang('en');
@@ -20,6 +21,13 @@ export class GloabalProvider {
       this.translate.use('ar');
     else
       this.translate.use('en');
+  }
+  
+  setTabBarHiddentStatus(status: boolean) {
+    this.isTabBarHidden = status;
+  }
+  getTabHiddenStatus() {
+    return this.isTabBarHidden;
   }
 
 }

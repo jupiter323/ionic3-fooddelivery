@@ -1,0 +1,59 @@
+<!--
+  Generated template for the CheckoutconfirmPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-row class="header-row">
+    <ion-row class="header-title">
+      <ion-col col-1>
+        <ion-icon class="left-icon" name="ios-arrow-back" (click)="navCtrl.pop()"></ion-icon>
+      </ion-col>
+      <span>
+        Check Out
+      </span>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="segment">
+    <ion-label class="title">
+      Confirmation
+    </ion-label>
+    <div padding>
+      <div class="sub-title">Payment method: Visa ending in {{1234}}</div>
+      <div class="sub-title">Billing Address: Same as shipping address</div><br>
+      <div class="right-subtitle" (click)="goSelectCard()">Select another credit card</div>
+    </div>
+  </div>
+
+  <div class="segment">
+    <ion-row class="budget">
+      <ion-label class="sub-title">Subtotal</ion-label>
+      <span>{{5}}.00<span>JOD</span></span>
+    </ion-row>
+    <ion-row *ngIf="couponValidated" class="coupon">
+      <ion-label class="sub-title">Coupon Discount</ion-label>
+      <span>{{15}}%</span>
+    </ion-row>
+    <ion-row class="budget">
+      <ion-label class="sub-title">Delivery Fee</ion-label>
+      <span>{{5}}.00<span>JOD</span></span>
+    </ion-row>
+    <ion-row class="budget">
+      <ion-label class="sub-title">VAT(16%)</ion-label>
+      <span>{{5}}.00<span>JOD</span></span>
+    </ion-row>
+    <ion-row class="budget">
+      <ion-label class="sub-title">Total</ion-label>
+      <span *ngIf="couponValidated" class=" cross">{{30.00}}<span>JOD</span></span>
+      <span>{{25}}.00<span>JOD</span></span>
+    </ion-row>
+  </div>
+  <button ion-button class="normal-btn" (click)="order()">Confirm Order</button>
+</ion-content>

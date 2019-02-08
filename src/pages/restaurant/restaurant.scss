@@ -1,0 +1,145 @@
+page-restaurant {
+    ion-header {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 41px;
+        font-size: 22px;
+        letter-spacing: 0.205px;
+        color: #FFFFFF;
+
+    }
+    ion-content {
+        background: white;
+        .segment {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            position: relative;
+            .background-wrap {
+                height: 31vh;
+                width: 100%;
+                overflow: hidden;
+                .img {
+                    width: 100%;
+                }
+            }
+            .restaurant-over-detail {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                text-align: center;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 12px;
+                font-size: 14px;
+                letter-spacing: 0.282353px;
+                color: #FFFFFF;
+                .kind {
+                    margin-top: 0;
+                    padding: 10px;
+                    background: rgba($color: black, $alpha: 0.59);
+                    mix-blend-mode: normal;
+                    border-radius: 3px;
+                }
+                ion-row.row-center {
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 0 15px;
+                    div span {
+                        span {
+                            font-size: 10px;
+                        }
+                    }
+                }
+                .off-style {
+                    position: absolute;
+                    top: 25vh;
+                    background: rgba($color: black, $alpha: 0.59);
+                    width: 100%;
+                    padding: 10px 10px 10px 10px;
+                    margin: 0;
+                }
+            }
+        }
+        .tab-row-bar {
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0;
+            box-shadow: inset 1px -1px 1px rgba(166, 166, 166, 0.25);
+            background: #F4F4F4;
+            div {
+                width: 33.3%; // padding: 10px 0;
+                height: 100%;
+                align-items: center;
+                text-align: center;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: normal;
+                font-size: 14px;
+                letter-spacing: -0.384px;
+                color: #545454;
+                p {
+                    border-right: 0.5px solid #E3E3E3;
+                    border-left: 0.5px solid #E3E3E3;
+                    width: 100%;
+                }
+            }
+            div.active {
+                background: #FFFFFF;
+                border: 1px solid #E3E3E3;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: normal;
+                font-size: 14px;
+                letter-spacing: -0.384px;
+                color: #228D8C;
+                p {
+                    border: none;
+                }
+            }
+        }
+        .tab-body-menu {
+            width: 100%;
+            .buttons {
+                padding: 15px 0 0 15px;
+                width: 200% !important;
+                overflow-x: scroll !important;
+                button {
+                    width: 96px;
+                    height: 39px;
+                    border-radius: 19.5px !important;
+                    font-size: 14px;
+                }
+            }
+            ion-list {
+                .name-des {
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 15px;
+                    font-size: 14px;
+                    letter-spacing: 0.282353px;
+                    color: #545454;
+                    width: 1000px !important;
+                }
+                .jod {
+                    text-align: right;
+                    width: 50px;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 15px;
+                    font-size: 19px;
+                    letter-spacing: 0.329412px;
+                    color: #228D8C;
+                    span {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

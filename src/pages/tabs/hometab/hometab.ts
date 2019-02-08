@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { RestaurantPage } from '../../restaurant/restaurant';
+import { GloabalProvider } from '../../../providers/gloabal/gloabal';
 
 /**
  * Generated class for the HometabPage page.
@@ -25,14 +27,20 @@ export class HometabPage {
     { kind: "Fast Food", name: "Salt Restaurant & Bar", background: "assets/imgs/onboarding.png", logo: "assets/imgs/logo1.png", distance: 3.00, time: 30, rate: 4.5 }
   ];
   offScreens = ["assets/imgs/offimage.png", "assets/imgs/offimage.png", "assets/imgs/offimage.png", "assets/imgs/offimage.png"]
-  offSlide:boolean = false;
-  orderStatus:boolean = false;
+  offSlide: boolean = true;
+  orderStatus: boolean = false;
   constructor(
+    private gs:GloabalProvider,
     public navCtrl: NavController) {
 
   }
 
   expandHeader() {
     this.expandedHeader = !this.expandedHeader;
+  }
+
+  goRestaurant(index) {
+    this.gs.setTabBarHiddentStatus(true);
+    this.navCtrl.push(RestaurantPage, { restaurant: this.restaurantsList[index] });
   }
 }

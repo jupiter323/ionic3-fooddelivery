@@ -58,7 +58,7 @@
 <ion-content>
 
   <div class="restaurant-list">Restaurant List</div>
-  <div class="segment" *ngFor="let restaurant of restaurantsList">
+  <div class="segment" *ngFor="let restaurant of restaurantsList;let index=index" (click)="goRestaurant(index)">
     <div class="background-wrap">
       <img [src]="restaurant.background">
     </div>

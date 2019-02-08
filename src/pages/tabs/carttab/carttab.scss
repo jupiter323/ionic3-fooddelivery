@@ -1,3 +1,84 @@
 page-carttab {
-
+    ion-header {
+        .sub-title {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            font-size: 14px !important;
+            text-align: center;
+            color: #FFFFFF;
+        }
+    }
+    ion-content {
+        background: #f4f4f4 !important;
+        .segment {
+            padding-top: 10px;
+            margin-bottom: 15px;
+            padding-bottom: 0;
+            ion-list {
+                margin: 0 !important;
+                .restaurant {
+                    img {
+                        height: 40px;
+                    }
+                    span {
+                        margin-left: 15px;
+                    }
+                }
+                .food {
+                    overflow: wrap;
+                    padding-left: 5px !important;
+                    span {
+                        font-size: 11px; // overflow: hidden;
+                    }
+                    .cart-row {
+                        padding: 5px 10px 10px 5px;
+                        justify-content: space-between;
+                        align-items: center;
+                        .full-height {
+                            align-items: center;
+                            width: 40%;
+                            justify-content: space-between;
+                        }
+                        span {
+                            font-family: Roboto;
+                            font-style: normal;
+                            font-weight: bold;
+                            line-height: 15px;
+                            font-size: 24px !important;
+                            letter-spacing: 0.564706px;
+                            color: #228D8C;
+                        }
+                        span.jod {
+                            font-family: Roboto;
+                            font-style: normal;
+                            font-weight: normal;
+                            line-height: 15px;
+                            font-size: 22px;
+                            letter-spacing: 0.329412px;
+                            color: #545454;
+                            span {
+                                font-size: 12px !important;
+                            }
+                        }
+                        .jod1 {
+                            color: #228D8C !important;
+                            span {
+                                font-size: 12px !important;
+                            }
+                        }
+                    }
+                }
+                .trash-btn-row {
+                    background: red;
+                    box-shadow: inset 5px 0px 5px rgba(61, 13, 13, 0.25);
+                    width: 50px;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        
+        }
+    }
 }

@@ -1,6 +1,6 @@
-<ion-tabs>
-    <ion-tab [root]="hometabRoot" [tabBadge] = 1 tabTitle="HOME" tabIcon="md-home"></ion-tab>
-    <ion-tab [root]="favoritetabRoot" [tabBadge] = 1 tabTitle="FAVORITE" tabIcon="md-heart"></ion-tab>
+<ion-tabs [ngClass]="{'hidden': gs.getTabHiddenStatus()}">
+    <ion-tab [root]="hometabRoot" [tabBadge]=1 tabTitle="HOME" tabIcon="md-home"></ion-tab>
+    <ion-tab [root]="favoritetabRoot" [tabBadge]=1 tabTitle="FAVORITE" tabIcon="md-heart"></ion-tab>
     <ion-tab [root]="carttabRoot" tabTitle="CART" tabIcon="md-cart"></ion-tab>
     <ion-tab [root]="recordertabRoot" tabTitle="RECORDER" tabIcon="custom-icon-recorder"></ion-tab>
     <ion-tab [root]="profiletabRoot" tabTitle="PROFILE" tabIcon="md-person"></ion-tab>

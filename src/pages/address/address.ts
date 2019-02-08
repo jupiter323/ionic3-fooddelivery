@@ -1,7 +1,7 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
-import { HomePage } from '../home/home';
+import { TabsPage } from '../tabs/tabs';
 
 /**
  * Generated class for the AddressPage page.
@@ -130,7 +130,7 @@ export class AddressPage {
   // page control
   pressedDone() {
     if (this.registeredStats)
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot(TabsPage);
     else
       this.registeredStats = true;
   }

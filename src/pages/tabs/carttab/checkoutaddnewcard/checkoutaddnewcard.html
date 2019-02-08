@@ -1,0 +1,48 @@
+<!--
+  Generated template for the CheckoutaddnewcardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-row class="header-row">
+    <ion-row class="header-title">
+      <ion-col col-1>
+        <ion-icon class="left-icon" name="ios-arrow-back" (click)="navCtrl.pop()"></ion-icon>
+      </ion-col>
+      <span>
+        Add Credit Card
+      </span>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="segment">
+    <ion-label class="title">Please fill below information</ion-label>
+    <div class="sub-title default-padding">Name on Card</div>
+    <div class="second-style default-padding">
+      <ion-input type="text" placeholder="Enter Text" [(ngModel)]="formData.name"></ion-input>
+    </div>
+    <div class="sub-title default-padding">Credit Card Number</div>
+    <div class="second-style default-padding">
+      <ion-input type="tel" maxLength=16 placeholder="Enter Text" [(ngModel)]="formData.number"></ion-input>
+    </div>
+    <div class="sub-title default-padding">Expiry Date</div>
+    <div class="second-style default-padding">
+      <ion-input type="date" placeholder="Enter Text" [(ngModel)]="formData.exp"></ion-input>
+    </div>
+    <div class="sub-title default-padding">CVV2</div>
+    <div class="second-style default-padding">
+      <ion-input type="tel" maxLength=3 placeholder="Enter Text" [(ngModel)]="formData.cvv"></ion-input>
+    </div>
+  </div>
+
+  <button ion-button class="normal-btn" (click)="saveCard()">Done</button>
+
+</ion-content>

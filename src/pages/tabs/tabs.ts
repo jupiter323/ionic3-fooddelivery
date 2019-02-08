@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
+import { GloabalProvider } from '../../providers/gloabal/gloabal';
 
 /**
  * Generated class for the TabsPage tabs.
@@ -22,8 +23,8 @@ export class TabsPage {
   profiletabRoot = 'ProfiletabPage'
 
 
-  constructor(public navCtrl: NavController) {
-    
+  constructor(public navCtrl: NavController, private gs: GloabalProvider) {
+
   }
 
 }

@@ -21,6 +21,7 @@
     font-family: 'Roboto';
     src: url('../assets/fonts/Roboto-Medium.ttf') format("truetype");
 }
+
 ion-icon {
     &[class*="custom-"] {
         // Instead of using the font-based icons
@@ -36,15 +37,16 @@ ion-icon {
         mask-image: url(../assets/icon/recorderIcon.svg);
     }
 }
+
 ion-badge {
-    background: #FF0000!important;
+    background: #FF0000 !important;
     padding-left: 3.5px;
     padding-right: 3.5px;
     border-radius: 50% !important;
     text-align: center;
-    font-size: 9px!important;    
-   
+    font-size: 9px !important;
 }
+
 .notification {
     position: relative;
     ion-badge {
@@ -62,6 +64,10 @@ ion-badge {
             margin-right: 30px; // text-align: center;
         }
     }
+}
+
+ion-tabs.hidden div.tabbar {
+    display: none
 }
 
 ion-header.header-md {
@@ -85,7 +91,7 @@ ion-header {
             align-items: center;
             .left-icon {
                 float: right;
-                font-size: 27px;
+                font-size: 20px;
             }
             span {
                 margin: auto;
@@ -98,8 +104,24 @@ ion-header {
             }
             .right-icon {
                 float: left;
-                font-size: 27px;
+                font-size: 20px;
             }
+        }
+    }
+    .header-detail {
+        background: #0D5E5D;
+        justify-content: space-between;
+        align-items: center;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 15px;
+        font-size: 14px;
+        letter-spacing: 0.376471px;
+        color: #FFFFFF;
+        padding: 10px 15px;
+        div span {
+            font-size: 9px;
         }
     }
 }
@@ -126,6 +148,54 @@ ion-row {
 
 .full-height {
     height: 100%;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.default-padding {
+    padding: 5px 10px;
+}
+
+.cross-line {
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #C2BEBE;
+}
+
+.selected-btn {
+    width: 100%;
+    height: 30px;
+    border-radius: 15px !important;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 22px;
+    font-size: 12px;
+    letter-spacing: -0.282353px;
+    color: #FFFFFF;
+    text-transform: capitalize;
+}
+
+.unselected-btn {
+    width: 100%;
+    height: 30px;
+    border-radius: 15px !important;
+    background: white;
+    border: 2px solid #8B8B8B;
+    color: #8B8B8B;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 22px;
+    font-size: 12px;
+    letter-spacing: -0.282353px;
+    text-transform: capitalize;
 }
 
 ion-content.back-image-first {
@@ -166,6 +236,107 @@ ion-content {
         box-shadow: 0px 1px 2px rgba(149, 149, 149, 0.5);
         border-radius: 3px;
         padding-bottom: 15px;
+        .right-subtitle {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            font-size: 14px;
+            text-align: right;
+            color: #228D8C;
+            text-align: right;
+        }
+        ion-datetime {
+            width: 100%;
+            padding-top: 0;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 22px;
+            font-size: 14px;
+            letter-spacing: -0.282353px;
+            color: #228D8C;
+        }
+        .check-box {
+            ion-row.between {
+                border-top: 1px solid #C2BEBE;
+            }
+        }
+        .budget,
+        .coupon {
+            padding: 0 15px;
+            justify-content: space-between;
+            align-items: center;
+            .cross {
+                margin-right: 30px;
+                font-weight: 100;
+                text-decoration: line-through;
+            }
+            span {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 15px;
+                font-size: 22px;
+                letter-spacing: 0.329412px;
+                color: #228D8C;
+                span {
+                    font-size: 12px !important;
+                }
+            }
+        }
+        .coupon {
+            .sub-title {
+                color: red !important;
+            }
+            span {
+                color: red !important;
+            }
+        }
+        .step-wraper {
+            padding: 5px 10px 0px 10px;
+            .step-row {
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+                div {
+                    text-align: left;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: normal;
+                    font-size: 14px;
+                    color: #8B8B8B;
+                }
+                div.right {
+                    text-align: right;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: normal;
+                    font-size: 14px;
+                    text-align: right;
+                }
+                div.active {
+                    color: #228D8C;
+                }
+            }
+        }
+        .gray-back-row {
+            background: #E5E5E5;
+            height: 50px;
+            align-items: center;
+            padding: 5px 10px;
+            span {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 15px;
+                font-size: 22px;
+                letter-spacing: 0.376471px;
+                color: #545454;
+            }
+        }
         ion-label.title {
             /* Label Copy 2 */
             font-family: Roboto;
@@ -177,6 +348,29 @@ ion-content {
             color: #545454;
             padding: 13px;
             padding-bottom: 0;
+        }
+        div.second-style {
+            ion-input {
+                border-bottom: 0.5px solid #C2BEBE;
+                box-sizing: border-box;
+                border-radius: 3px;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 19px;
+                font-size: 22px;
+                letter-spacing: -0.282353px;
+                color: #228D8C;
+                ::-webkit-input-placeholder {
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 300;
+                    line-height: 17px;
+                    font-size: 18px;
+                    letter-spacing: -0.408px;
+                    color: #C2BEBE;
+                }
+            }
         }
         div.detail {
             padding: 0px 13px 13px 13px;
@@ -238,32 +432,6 @@ ion-content {
         }
         .cuisine-row {
             padding: 0 10px 0 10px;
-            .selected-btn {
-                width: 100%;
-                height: 30px;
-                border-radius: 15px;
-                font-family: Roboto;
-                font-style: normal;
-                font-weight: normal;
-                line-height: 22px;
-                font-size: 12px;
-                letter-spacing: -0.282353px;
-                color: #FFFFFF;
-            }
-            .unselected-btn {
-                width: 100%;
-                height: 30px;
-                border-radius: 15px;
-                background: white;
-                border: 2px solid #8B8B8B;
-                color: #8B8B8B;
-                font-family: Roboto;
-                font-style: normal;
-                font-weight: normal;
-                line-height: 22px;
-                font-size: 12px;
-                letter-spacing: -0.282353px;
-            }
         }
         .add-btn {
             height: 30px;
@@ -278,6 +446,22 @@ ion-content {
             color: #228D8C;
             text-transform: capitalize;
             margin-left: 20% !important;
+        }
+        .edit-btn {
+            height: 30px;
+            border-radius: 15px !important;
+            width: 45%;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 21px;
+            font-size: 14px;
+            letter-spacing: 0.265294px;
+            color: #228D8C;
+            text-transform: capitalize;
+            ion-icon {
+                margin-right: 5px;
+            }
         }
         ion-list {
             margin-top: 20px !important;

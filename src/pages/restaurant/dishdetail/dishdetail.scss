@@ -1,0 +1,161 @@
+page-dishdetail {
+    ion-header {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 41px;
+        font-size: 22px;
+        letter-spacing: 0.205px;
+        color: #FFFFFF;
+    }
+    ion-content {
+        img {
+            width: 100%;
+            margin-top: -5px;
+            height: 27vh;
+        }
+        .detail-container {
+            p {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 15px;
+                font-size: 14px;
+                text-align: justify;
+                letter-spacing: 0.282353px;
+                color: #545454;
+                width: 70%;
+                padding: 0 15px;
+            }
+            .dishkind {
+                padding: 0 15px;
+                justify-content: space-between;
+                align-items: center;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 15px;
+                font-size: 22px;
+                letter-spacing: 0.329412px;
+                color: #228D8C;
+                ion-label {
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 22px;
+                    font-size: 22px;
+                    letter-spacing: 0.282353px;
+                    color: #545454;
+                }
+                span {
+                    font-size: 10px;
+                }
+            }
+            div.options {
+                width: 100%;
+                ion-label.title {
+                    /* Label Copy 2 */
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 22px;
+                    font-size: 22px;
+                    letter-spacing: -0.282353px;
+                    color: #545454;
+                    padding: 10px 15px 0 15px;
+                }
+                .sub-title {
+                    /* Label Copy 2 */
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 22px;
+                    font-size: 14px;
+                    letter-spacing: -0.282353px;
+                    color: #545454;
+                }
+                ion-list {
+                    margin-top: 20px !important;
+                    ion-item {
+                        padding: 0 !important;
+                        .item-head {
+                            padding: 15px;
+                            justify-content: space-between;
+                            ion-icon {
+                                float: right;
+                            }
+                        }
+                        .item-inner {
+                            ion-label {
+                                padding: 0 !important;
+                                margin: 0 !important;
+                            }
+                            padding: 0 !important;
+                        }
+                        .sub-des {
+                            text-align: justify;
+                            letter-spacing: -0.336px;
+                            color: #545454;
+                            border-top: 0.1px solid #C2BEBE;
+                            padding: 15px;
+                            span {
+                                font-family: Roboto;
+                                font-style: normal;
+                                font-weight: normal;
+                                line-height: 15px;
+                                font-size: 14px;
+                                letter-spacing: 0.329412px;
+                                color: #228D8C;
+                                span {
+                                    font-size: 10px;
+                                }
+                            }
+                        }
+                        .selected {
+                            background: #F9F9F9;
+                        }
+                    }
+                }
+            }
+        }
+        .add-cart {
+            padding: 0 10px 15px 10px;
+            align-items: center;
+            justify-content: space-between;
+
+            div {
+                width: 40%;
+                height: 39px;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 15px;
+                font-size: 24px;
+                letter-spacing: 0.564706px;
+                color: #228D8C;
+                ion-row {
+                    align-items: center;
+                }
+            }
+            div.add-cart-btn {
+                width: 60%;
+                background: #228D8C;
+                border-radius: 19.5px;
+                text-align: center;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 20px;
+                font-size: 22px;
+                letter-spacing: -0.288px;
+                color: #FFFFFF;
+                ion-row {
+                    padding: 0 15px 0 15px;
+                }
+                span {
+                    border-left: 1px solid #067372;
+                }
+            }
+        }
+    }
+}
