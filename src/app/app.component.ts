@@ -4,7 +4,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ProfiletabPage } from '../pages/tabs/profiletab/profiletab';
-import { OnboardingPage } from '../pages/onboarding/onboarding';
 import { TabsPage } from '../pages/tabs/tabs';
 @Component({
   templateUrl: 'app.html'
