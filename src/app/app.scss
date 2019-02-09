@@ -198,6 +198,22 @@ ion-row {
     text-transform: capitalize;
 }
 
+.avatar {
+    width: 70px;
+    height: 70px;
+    position: relative;
+    img {
+        width: 70px;
+        height: 70px;
+        border-radius: 35px;
+    }
+    svg {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+}
+
 ion-content.back-image-first {
     background-image: url("../../assets/imgs/onboarding.png") !important;
 }

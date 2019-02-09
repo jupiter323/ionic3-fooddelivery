@@ -3,11 +3,9 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { ProfiletabPage } from '../pages/tabs/profiletab/profiletab';
+import { OnboardingPage } from '../pages/onboarding/onboarding';
 import { TabsPage } from '../pages/tabs/tabs';
-import { RestaurantPage } from '../pages/restaurant/restaurant';
-import { DishdetailPage } from '../pages/restaurant/dishdetail/dishdetail';
-import { CheckoutconfirmPage } from '../pages/tabs/carttab/checkoutconfirm/checkoutconfirm';
-import { CheckoutaddnewcardPage } from '../pages/tabs/carttab/checkoutaddnewcard/checkoutaddnewcard';
 @Component({
   templateUrl: 'app.html'
 })
@@ -38,4 +36,3 @@ export class MyApp {
 
 }
 
-    

@@ -7,7 +7,6 @@ page-restaurant {
         font-size: 22px;
         letter-spacing: 0.205px;
         color: #FFFFFF;
-
     }
     ion-content {
         background: white;
@@ -105,11 +104,16 @@ page-restaurant {
             width: 100%;
             .buttons {
                 padding: 15px 0 0 15px;
-                width: 200% !important;
+                width: 100% !important;
+                height: 100%;
                 overflow-x: scroll !important;
+                .special {
+                    max-width: 1000px;
+                }
                 button {
                     width: 96px;
                     height: 39px;
+                    flex: 1;
                     border-radius: 19.5px !important;
                     font-size: 14px;
                 }

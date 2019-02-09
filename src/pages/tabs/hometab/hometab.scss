@@ -60,6 +60,9 @@ page-hometab {
                 padding-bottom: 0;
             }
         }
+    }
+    ion-content {
+        background: #E5E5E5 !important;
         ion-slides {
             height: 28vh;
             width: 100%;
@@ -77,11 +80,11 @@ page-hometab {
                 height: 100%;
             }
         }
-    }
-    ion-content {
-        background: #E5E5E5 !important;
-        .scroll-content {
+        div.content {
             padding: 0 15px 15px 15px !important;
+        }
+        .scroll-content {
+            padding: 0 !important;
         }
         .restaurant-list {
             font-family: Roboto;
@@ -151,7 +154,6 @@ page-hometab {
                         color: #228D8C;
                     }
                 }
-               
             }
         }
     }

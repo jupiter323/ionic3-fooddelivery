@@ -83,11 +83,26 @@
   </ion-row>
   <div *ngIf="selectedTab==0" class="tab-body-menu">
     <ion-row class="buttons">
-      <button ion-button [ngClass]="selectedCuisine==0?'selected-btn':'unselected-btn'" (click)="selected(0)">Sandwiches</button>
-      <button ion-button [ngClass]="selectedCuisine==1?'selected-btn':'unselected-btn'" (click)="selected(1)">Drinks</button>
-      <button ion-button [ngClass]="selectedCuisine==2?'selected-btn':'unselected-btn'" (click)="selected(2)">Ice Cream</button>
-      <button ion-button [ngClass]="selectedCuisine==3?'selected-btn':'unselected-btn'" (click)="selected(3)">Tea</button>
-      <button ion-button [ngClass]="selectedCuisine==4?'selected-btn':'unselected-btn'" (click)="selected(4)">Coffee</button>
+      <table>
+        <tr>
+          <td>
+            <button ion-button [ngClass]="selectedCuisine==0?'selected-btn':'unselected-btn'" (click)="selected(0)">Sandwiches</button>
+          </td>
+          <td>
+            <button ion-button [ngClass]="selectedCuisine==1?'selected-btn':'unselected-btn'" (click)="selected(1)">Drinks</button>
+          </td>
+          <td>
+            <button ion-button [ngClass]="selectedCuisine==2?'selected-btn':'unselected-btn'" (click)="selected(2)">Ice
+              Cream</button>
+          </td>
+          <td>
+            <button ion-button [ngClass]="selectedCuisine==3?'selected-btn':'unselected-btn'" (click)="selected(3)">Tea</button>
+          </td>
+          <td>
+            <button ion-button [ngClass]="selectedCuisine==4?'selected-btn':'unselected-btn'" (click)="selected(4)">Coffee</button>
+          </td>
+        </tr>
+      </table>
     </ion-row>
     <div>
       <ion-list>

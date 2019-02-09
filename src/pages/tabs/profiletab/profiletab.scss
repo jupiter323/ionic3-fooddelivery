@@ -1,3 +1,23 @@
 page-profiletab {
-
+    ion-content {
+        background: #f4f4f4 !important;
+        .title {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 19px;
+            font-size: 22px;
+            letter-spacing: -0.282353px;
+            color: #545454;
+        }
+        .sub-title {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 22px;
+            font-size: 14px;
+            letter-spacing: -0.282353px;
+            color: #545454;
+        }
+    }
 }
