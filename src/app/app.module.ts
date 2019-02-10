@@ -19,6 +19,7 @@ import { ShipinginfoPage } from '../pages/tabs/carttab/shipinginfo/shipinginfo';
 import { CheckoutaddnewcardPage } from '../pages/tabs/carttab/checkoutaddnewcard/checkoutaddnewcard';
 import { CheckoutconfirmPage } from '../pages/tabs/carttab/checkoutconfirm/checkoutconfirm';
 import { CheckoutselectPage } from '../pages/tabs/carttab/checkoutselect/checkoutselect';
+import { ProfiletabPage } from '../pages/tabs/profiletab/profiletab';
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -34,7 +35,8 @@ export function createTranslateLoader(http: Http) {
     ShipinginfoPage,
     CheckoutconfirmPage,
     CheckoutaddnewcardPage,
-    CheckoutselectPage
+    CheckoutselectPage,
+    ProfiletabPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ export function createTranslateLoader(http: Http) {
     ShipinginfoPage,
     CheckoutconfirmPage,
     CheckoutaddnewcardPage,
-    CheckoutselectPage
+    CheckoutselectPage,
+    ProfiletabPage
   ],
   providers: [
     StatusBar,
