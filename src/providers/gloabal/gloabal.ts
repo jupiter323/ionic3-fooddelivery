@@ -15,6 +15,16 @@ export class GloabalProvider {
     translate.setDefaultLang('en');
   }
 
+  getCurrentLanguageArabic() {
+    return this.isArabic;
+  }
+  setArabic(isArabic: boolean) {
+    this.isArabic = isArabic;
+    if (this.isArabic)
+      this.translate.use('ar');
+    else
+      this.translate.use('en');
+  }
   changeLanguage() {
     this.isArabic = !this.isArabic;
     if (this.isArabic)
@@ -22,7 +32,7 @@ export class GloabalProvider {
     else
       this.translate.use('en');
   }
-  
+
   setTabBarHiddentStatus(status: boolean) {
     this.isTabBarHidden = status;
   }

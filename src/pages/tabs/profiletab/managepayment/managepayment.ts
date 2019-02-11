@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CheckoutselectPage } from '../../carttab/checkoutselect/checkoutselect';
+import { ZiancashPage } from './ziancash/ziancash';
 
 /**
  * Generated class for the ManagepaymentPage page.
@@ -20,6 +22,13 @@ export class ManagepaymentPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManagepaymentPage');
+  }
+  goSelectCreditCard() {
+    this.navCtrl.push(CheckoutselectPage);
+  }
+  goZainCash() {
+    this.navCtrl.push(ZiancashPage);
+
   }
 
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the ChangenumberPage page.
@@ -14,12 +14,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'changenumber.html',
 })
 export class ChangenumberPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  number
+  formData: any = { verify: [] }
+  isPhonverify = false;
+  constructor(
+    private altCtrl: AlertController,
+    public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ChangenumberPage');
+  }
+  saveNewnumber() {
+    this.isPhonverify = true;
+  }
+  done() {
+    let alert = this.altCtrl.create({
+      title: 'Success',
+      message: 'Your mobile number has been changed successfully',
+      buttons: [
+        {
+          text: 'Ok',
+          handler: data => {
+            //save
+            this.navCtrl.pop();
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 
 }

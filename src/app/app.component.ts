@@ -5,11 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { ProfiletabPage } from '../pages/tabs/profiletab/profiletab';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ChangenamePage } from '../pages/tabs/profiletab/changename/changename';
+import { ChangenumberPage } from '../pages/tabs/profiletab/changenumber/changenumber';
+import { LoginPage } from '../pages/login/login';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = TabsPage;
+  rootPage: any = LoginPage;
 
   constructor(
     public translate: TranslateService,

@@ -10,6 +10,10 @@
     "Create an account?":"انشئ حساب؟",
     "Sign Up":"سجل",
 
-    "Password":"كلمه السر"
+    "Password":"كلمه السر",
+    "Please choose language":"يرجى اختيار اللغة",
+    "Change Language":"غير اللغة",
+    "Save":"حفظ"
+
 
 }

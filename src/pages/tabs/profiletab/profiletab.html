@@ -49,7 +49,7 @@
     <ion-row class="gray-back-row">
       <span>Account Settings</span>
     </ion-row>
-    <ion-row class="item-row">
+    <ion-row class="item-row" (click)="goChangeName()">
       <ion-col col-9>
         <ion-row>
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +66,7 @@
       <div class="cross-line"></div>
     </ion-row>
 
-    <ion-row class="item-row">
+    <ion-row class="item-row" (click)="goChangeNumber()">
       <ion-col col-11>
         <ion-row>
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +83,7 @@
       <div class="cross-line"></div>
     </ion-row>
 
-    <ion-row class="item-row">
+    <ion-row class="item-row" (click)="goChangePassword()">
       <ion-col col-11>
         <ion-row>
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +100,7 @@
       <div class="cross-line"></div>
     </ion-row>
 
-    <ion-row class="item-row">
+    <ion-row class="item-row" (click)="goChangeLanguage()">
       <ion-col col-9>
         <ion-row>
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,7 +118,7 @@
     </ion-row>
 
 
-    <ion-row class="item-row">
+    <ion-row class="item-row" (click)="goChangeAddress()">
       <ion-col col-9>
         <ion-row>
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -135,7 +135,7 @@
       <div class="cross-line"></div>
     </ion-row>
 
-    <ion-row class="item-row">
+    <ion-row class="item-row" (click)="goManagePayment()">
       <ion-col col-9>
         <ion-row>
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +175,7 @@
       <span>Other</span>
     </ion-row>
 
-    <ion-row class="item-row">
+    <ion-row class="item-row" (click)="goPrivacyPolicy()">
       <ion-col col-9>
         <ion-row>
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -190,7 +190,7 @@
       <ion-icon name="ios-arrow-forward"></ion-icon>
       <div class="cross-line"></div>
     </ion-row>
-    <ion-row class="item-row">
+    <ion-row class="item-row" (click)="goTermsOfService()">
       <ion-col col-9>
         <ion-row>
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -205,7 +205,7 @@
       <ion-icon name="ios-arrow-forward"></ion-icon>
       <div class="cross-line"></div>
     </ion-row>
-    <ion-row class="item-row">
+    <ion-row class="item-row" (click)="logOut()">
       <ion-col col-9>
         <ion-row>
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

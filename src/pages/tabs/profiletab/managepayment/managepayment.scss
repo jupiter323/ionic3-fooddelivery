@@ -1,3 +1,9 @@
 page-managepayment {
-
+    ion-content {
+        background: #f4f4f4 !important;
+        .segment {
+            padding-top: 12px;
+            height: 70vh;
+        }
+    }
 }

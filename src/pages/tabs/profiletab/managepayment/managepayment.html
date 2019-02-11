@@ -6,13 +6,41 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>managepayment</ion-title>
-  </ion-navbar>
+  <ion-row class="header-row">
+    <ion-row class="header-title">
+      <ion-col col-1>
+        <ion-icon class="left-icon" name="ios-arrow-back" (click)="navCtrl.pop()"></ion-icon>
+      </ion-col>
+      <span>
+        Payment Method
+      </span>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+  </ion-row>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <div class="segment default-padding">
+    <ion-row class="item-row" (click)="goSelectCreditCard()">
+      <ion-col col-9>
+        <ion-row>
+          <span>Credit Card</span>
+        </ion-row>
+      </ion-col>
+      <ion-icon name="ios-arrow-forward"></ion-icon>
+      <div class="cross-line"></div>
+    </ion-row>
+    <ion-row class="item-row" (click)="goZainCash()">
+      <ion-col col-9>
+        <ion-row>
+          <span>Zain Cash</span>
+        </ion-row>
+      </ion-col>
+      <ion-icon name="ios-arrow-forward"></ion-icon>
+      <div class="cross-line"></div>
+    </ion-row>
+  </div>
 </ion-content>

@@ -5,14 +5,31 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>changename</ion-title>
-  </ion-navbar>
-
+  <ion-row class="header-row">
+    <ion-row class="header-title">
+      <ion-col col-1>
+        <ion-icon class="left-icon" name="ios-arrow-back" (click)="navCtrl.pop()"></ion-icon>
+      </ion-col>
+      <span>
+        Change Name
+      </span>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+  </ion-row>
 </ion-header>
 
-
 <ion-content padding>
-
+  <div class="segment text-center default-padding">
+    <div class="title">Please enter your name</div>
+    <P></P><br>
+    <div class="third-style default-padding">
+      <ion-input type="text" placeholder="Enter Text" [(ngModel)]="name"></ion-input>
+    </div>
+    <div class="sub-title" padding>Please note: If you change your name, you can't change it again for 60 days. Don't
+      add any
+      unusual capitalisation, punctuation, characters or random words. Learn more.</div>
+      <P></P><br>
+    <button ion-button class="normal-btn" (click)="save()">Save</button>
+  </div>
 </ion-content>

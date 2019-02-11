@@ -5,14 +5,39 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>changeaddress</ion-title>
-  </ion-navbar>
-
+  <ion-row class="header-row">
+    <ion-row class="header-title">
+      <ion-col col-1>
+        <ion-icon class="left-icon" name="ios-arrow-back" (click)="navCtrl.pop()"></ion-icon>
+      </ion-col>
+      <span>
+        Address
+      </span>
+      <ion-col col-1 (click)="addAddress()">
+        <ion-icon class="right-icon" name="md-add"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-row>
 </ion-header>
 
-
 <ion-content padding>
-
+  <div class="segment">
+    <div *ngFor="let address of addressList">
+      <ion-row class="gray-back-row">
+        <span>{{address.address}}</span>
+      </ion-row>
+      <div *ngFor="let item of address.list;let itemIndex = index">
+        <ion-row class="align-center space-between default-padding">
+          <span class="sub-title">{{item.title}}</span>
+          <button ion-button class="edit-btn" outline (click)="editAddress()">
+            <ion-icon name="md-create"></ion-icon> <span> Edit Address</span>
+          </button>
+        </ion-row>
+        <ion-row class="sub-title default-padding">{{item.des}} </ion-row>
+        <ion-row class="default-padding" *ngIf="itemIndex+1 < address.list.length">
+          <div class="cross-line"></div>
+        </ion-row>
+      </div>
+    </div>
+  </div>
 </ion-content>

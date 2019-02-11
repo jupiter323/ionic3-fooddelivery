@@ -5,14 +5,57 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>changelanguage</ion-title>
-  </ion-navbar>
-
+  <ion-row class="header-row">
+    <ion-row class="header-title">
+      <ion-col col-1>
+        <ion-icon class="left-icon" name="ios-arrow-back" (click)="navCtrl.pop()"></ion-icon>
+      </ion-col>
+      <span>
+        {{"Change Language"|translate}}
+      </span>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+  </ion-row>
 </ion-header>
 
-
 <ion-content padding>
-
+  <div class="segment text-center default-padding">
+    <div class="title">{{"Please choose language"|translate}}</div>
+    <P></P><br>
+    <ion-row class="align-center space-between" padding>
+      <ion-col col-6>
+        <ion-row class="sub-title align-center" (click)="gs.setArabic(false)">
+          <svg *ngIf="!gs.getCurrentLanguageArabic()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="gs.getCurrentLanguageArabic()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">English</span>
+        </ion-row>
+      </ion-col>
+      <ion-col col-6>
+        <ion-row class="sub-title align-center" (click)="gs.setArabic(true)">
+          <svg *ngIf="gs.getCurrentLanguageArabic()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="!gs.getCurrentLanguageArabic()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">عربي</span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <P></P><br>
+    <button ion-button class="normal-btn" (click)="save()">{{"Save"|translate}}</button>
+  </div>
 </ion-content>

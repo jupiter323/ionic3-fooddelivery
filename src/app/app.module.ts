@@ -20,12 +20,22 @@ import { CheckoutaddnewcardPage } from '../pages/tabs/carttab/checkoutaddnewcard
 import { CheckoutconfirmPage } from '../pages/tabs/carttab/checkoutconfirm/checkoutconfirm';
 import { CheckoutselectPage } from '../pages/tabs/carttab/checkoutselect/checkoutselect';
 import { ProfiletabPage } from '../pages/tabs/profiletab/profiletab';
+import { ChangenamePage } from '../pages/tabs/profiletab/changename/changename';
+import { ChangeaddressPage } from '../pages/tabs/profiletab/changeaddress/changeaddress';
+import { ChangelanguagePage } from '../pages/tabs/profiletab/changelanguage/changelanguage';
+import { ChangenumberPage } from '../pages/tabs/profiletab/changenumber/changenumber';
+import { ChangepasswordPage } from '../pages/tabs/profiletab/changepassword/changepassword';
+import { ManagepaymentPage } from '../pages/tabs/profiletab/managepayment/managepayment';
+import { PrivacypolicyPage } from '../pages/tabs/profiletab/privacypolicy/privacypolicy';
+import { TermsofservicePage } from '../pages/tabs/profiletab/termsofservice/termsofservice';
+import { AddressaddeditPage } from '../pages/addressaddedit/addressaddedit';
+import { ZiancashPage } from '../pages/tabs/profiletab/managepayment/ziancash/ziancash';
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 @NgModule({
   declarations: [
-    MyApp,   
+    MyApp,
     OnboardingPage,
     LoginPage,
     AddressPage,
@@ -36,7 +46,16 @@ export function createTranslateLoader(http: Http) {
     CheckoutconfirmPage,
     CheckoutaddnewcardPage,
     CheckoutselectPage,
-    ProfiletabPage
+    ChangenamePage,
+    ChangeaddressPage,
+    ChangelanguagePage,
+    ChangenumberPage,
+    ChangepasswordPage,
+    ManagepaymentPage,
+    PrivacypolicyPage,
+    TermsofservicePage,
+    AddressaddeditPage,
+    ZiancashPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +71,7 @@ export function createTranslateLoader(http: Http) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,   
+    MyApp,
     OnboardingPage,
     LoginPage,
     AddressPage,
@@ -63,7 +82,16 @@ export function createTranslateLoader(http: Http) {
     CheckoutconfirmPage,
     CheckoutaddnewcardPage,
     CheckoutselectPage,
-    ProfiletabPage
+    ChangenamePage,
+    ChangeaddressPage,
+    ChangelanguagePage,
+    ChangenumberPage,
+    ChangepasswordPage,
+    ManagepaymentPage,
+    PrivacypolicyPage,
+    TermsofservicePage,
+    AddressaddeditPage,
+    ZiancashPage
   ],
   providers: [
     StatusBar,

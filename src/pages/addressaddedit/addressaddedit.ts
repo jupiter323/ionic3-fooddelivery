@@ -1,28 +1,24 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Geolocation } from '@ionic-native/geolocation';
-import { TabsPage } from '../tabs/tabs';
-
 /**
- * Generated class for the AddressPage page.
+ * Generated class for the AddressaddeditPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 declare var google;
 @IonicPage()
 @Component({
-  selector: 'page-address',
-  templateUrl: 'address.html',
+  selector: 'page-addressaddedit',
+  templateUrl: 'addressaddedit.html',
 })
-export class AddressPage {
+export class AddressaddeditPage {
 
 
   @ViewChild('map') mapElement: ElementRef;
-  registeredStats: boolean = false;
   isAddNewAddress: boolean = false;
-  isEditAddress:boolean = false;
+  isEditAddress: boolean = false;
 
   map: any;
   latLng: any;
@@ -30,17 +26,18 @@ export class AddressPage {
   isType: any = "city_hall";
   addressInfo: { city: string, area: string, additional: string, title: string } = { city: "", area: "", additional: "", title: "" }
   cities = ["Adam", "Bdavi", "Emirate"];
-  areas = ["Cnad", "Liyad", "Cros"]; 
-
-  selectedCuisine = [false, false, false, false, false, false];
-
+  areas = ["Cnad", "Liyad", "Cros"];
+  selectedCity = "Adam"
   addressList: Array<{ city: string, area: string, titles: Array<{ title: string, additional: string, selected: boolean }>, icon: string, showDetails: boolean }> = [];
 
   constructor(
+    private navPram:NavParams,
     public altCtrl: AlertController,
     public geoCtl: Geolocation,
     public navCtrl: NavController) {
-      
+      this.isAddNewAddress = this.navPram.data.isAddNewAddress;
+      this.isEditAddress = this.navPram.data.isEditAddress;
+
   }
 
   async ionViewDidLoad() {
@@ -62,28 +59,6 @@ export class AddressPage {
         showDetails: false
       });
     }
-  }
-
-  toggleDetails(data) {
-    if (data.showDetails) {
-      data.showDetails = false;
-      data.icon = 'ios-arrow-down';
-    } else {
-      data.showDetails = true;
-      data.icon = 'ios-arrow-up';
-    }
-  }
-  pressedTitle(addressIndex, titleIndex) {
-    this.addressList[addressIndex].titles = this.addressList[addressIndex].titles.map((x, i) => {
-      var xx = x;
-      if (i == titleIndex) {
-        xx.selected = true;
-        return xx;
-      } else {
-        xx.selected = false;
-        return xx;
-      }
-    })
   }
 
   saveAddAddress() {
@@ -130,17 +105,9 @@ export class AddressPage {
   }
   // page control
   pressedDone() {
-    if (this.registeredStats)
-      this.navCtrl.setRoot(TabsPage);
-    else
-      this.registeredStats = true;
+    this.navCtrl.pop();
   }
-  // cuisine control
-  selected(selectedIndex) {
-    this.selectedCuisine[selectedIndex] = !this.selectedCuisine[selectedIndex];
-    if (selectedIndex == 0 && this.selectedCuisine[0]) this.selectedCuisine = this.selectedCuisine.map((x) => true);
-    if (selectedIndex != 0 && !this.selectedCuisine[selectedIndex]) this.selectedCuisine[0] = false;
-  }
+  
   // map control start
   async getCurrentPosition() {
     var curentPos = await this.geoCtl.getCurrentPosition();
