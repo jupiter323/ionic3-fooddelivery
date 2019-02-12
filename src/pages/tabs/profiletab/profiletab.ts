@@ -9,6 +9,7 @@ import { PrivacypolicyPage } from './privacypolicy/privacypolicy';
 import { TermsofservicePage } from './termsofservice/termsofservice';
 import { LoginPage } from '../../login/login';
 import { ManagepaymentPage } from './managepayment/managepayment';
+import { NotificationsPage } from '../../notifications/notifications';
 
 /**
  * Generated class for the ProfiletabPage page.
@@ -57,5 +58,9 @@ export class ProfiletabPage {
   logOut() {
     this.navCtrl.setRoot(LoginPage);
   }
+  notification() {
+    this.navCtrl.push(NotificationsPage);
+  }
+
 
 }

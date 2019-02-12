@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { ModalController } from 'ionic-angular';
+import { ModalController, NavController } from 'ionic-angular';
 import { RestaurantfilterPage } from '../../pages/restaurantfilter/restaurantfilter';
+
 /*
   Generated class for the GloabalProvider provider.
 
@@ -12,7 +13,7 @@ import { RestaurantfilterPage } from '../../pages/restaurantfilter/restaurantfil
 export class GloabalProvider {
   public isArabic: boolean = false;
   private isTabBarHidden: boolean = false;
-  constructor(
+  constructor(   
     private modalCtl: ModalController,
     public translate: TranslateService) {
     console.log('Hello GloabalProvider Provider');
@@ -26,6 +27,7 @@ export class GloabalProvider {
     })
     modalPage.present();
   }
+  
   // control share value
   getCurrentLanguageArabic() {
     return this.isArabic;

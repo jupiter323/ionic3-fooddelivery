@@ -47,6 +47,24 @@ ion-badge {
     font-size: 9px !important;
 }
 
+[dir="ltr"] ion-badge {
+    left: -8px !important;
+}
+
+[dir="rtl"] ion-badge {
+    right: -7px !important;
+}
+
+[dir="ltr"] .tab-badge {
+    right: 10px !important;
+    left: unset !important;
+}
+
+[dir="rtl"] .tab-badge {
+    right: unset !important;
+    left: 15px!important;
+}
+
 .notification {
     position: relative;
     ion-badge {
@@ -58,10 +76,9 @@ ion-badge {
         padding-top: 1px;
         padding-left: 3.5px;
         padding-right: 3.5px;
-        left: -8px;
         text-align: center;
         &~svg {
-            margin-right: 30px; // text-align: center;
+            // margin-right: 30px; // text-align: center;
         }
     }
 }
@@ -217,6 +234,7 @@ ion-row {
         bottom: 0;
     }
 }
+
 .edit-btn {
     height: 30px;
     border-radius: 15px !important;
@@ -233,6 +251,7 @@ ion-row {
         margin-right: 5px;
     }
 }
+
 ion-content.back-image-first {
     background-image: url("../../assets/imgs/onboarding.png") !important;
 }
@@ -251,7 +270,7 @@ ion-content {
     .card-board {
         width: 85vw;
         margin: auto;
-        background: #FFFFFF;       
+        background: #FFFFFF;
         text-align: center;
         padding: 20px;
     }
@@ -623,7 +642,7 @@ ion-content {
                 font-family: Roboto;
                 font-style: normal;
                 font-weight: normal;
-                line-height: 19px;               
+                line-height: 19px;
                 letter-spacing: -0.282353px;
                 ::-webkit-input-placeholder {
                     font-family: Roboto;
@@ -712,7 +731,6 @@ ion-content {
             text-transform: capitalize;
             margin-left: 20% !important;
         }
-     
         ion-list {
             margin-top: 20px !important;
             ion-item {

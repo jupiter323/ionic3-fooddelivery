@@ -1,0 +1,32 @@
+page-notifications {
+    ion-avatar {
+        position: relative;
+        img {
+            box-shadow: 1px 1px 1px 1px gray;
+        }
+        svg {
+            position: absolute;
+            right: -2px;
+            bottom: -8px;
+        }
+    }
+    .title,
+    .sub-title {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 19px;
+        font-size: 15px;
+        letter-spacing: 0.282353px;
+        color: #545454;
+    }
+    .des {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 15px;
+        font-size: 14px;
+        letter-spacing: 0.282353px;
+        color: #545454;
+    }
+}

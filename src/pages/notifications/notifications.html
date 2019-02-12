@@ -1,0 +1,53 @@
+<!--
+  Generated template for the NotificationsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-row class="header-row">
+    <ion-row class="header-title">
+      <ion-col col-1>
+        <ion-icon class="left-icon" name="ios-arrow-back" (click)="navCtrl.pop()"></ion-icon>
+      </ion-col>
+      <span>
+        Notifications
+      </span>
+      <ion-col col-1>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let notification of notifications" no-padding (click)="goRestaurant()">
+      <ion-avatar item-left>
+        <img [src]="notification.img">
+        <!-- heart icon -->
+        <svg *ngIf="notification.favorite" width="21" height="18" viewBox="0 0 21 18" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M10.5 16L9.17 14.8587C4.23 11.1087 1 8.58152 1 5.4837C1 2.95652 3.28 1 6.225 1C7.84 1 9.455 1.65217 10.5 2.71196C11.545 1.65217 13.16 1 14.775 1C17.72 1 20 2.95652 20 5.4837C20 8.58152 16.77 11.1087 11.83 14.8587L10.5 16Z"
+            fill="#228D8C" stroke="white" stroke-width="2" />
+        </svg>
+        <!-- star icon -->
+        <svg *ngIf="notification.rate" width="20" height="19" viewBox="0 0 20 19" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M15.6712 17.7429C15.7969 17.5931 15.855 17.3988 15.8318 17.2055L15.2181 11.9991L18.8096 8.14136C18.9857 7.95259 19.0451 7.68447 18.9649 7.44017C18.8846 7.19586 18.6773 7.01345 18.4226 6.9631L13.2258 5.93142L10.6258 1.36198C10.4986 1.13837 10.2594 1 10 1C9.74062 1 9.5014 1.13837 9.3742 1.36198L6.77424 5.93142L1.57736 6.9631C1.32271 7.01345 1.11538 7.19586 1.03515 7.44017C0.954914 7.68447 1.01428 7.95259 1.1904 8.14136L4.78195 11.9991L4.16824 17.2055C4.13742 17.4607 4.24842 17.7125 4.45848 17.8638C4.66853 18.0152 4.94486 18.0425 5.18101 17.9351L10 15.7461L14.819 17.9351C14.9278 17.9844 15.0473 18.006 15.1666 17.9979C15.363 17.9849 15.5454 17.8927 15.6712 17.7429Z"
+            fill="#228D8C" stroke="white" stroke-width="2" />
+        </svg>
+
+      </ion-avatar>
+      <ion-label>
+        <div class="title">{{notification.title}}</div>
+        <div class="sub-title">{{notification.subtitle}}</div>
+        <div class="des">{{notification.des}}</div>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

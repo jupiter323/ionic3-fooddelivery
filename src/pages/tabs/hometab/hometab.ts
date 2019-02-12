@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { RestaurantPage } from '../../restaurant/restaurant';
 import { GloabalProvider } from '../../../providers/gloabal/gloabal';
+import { NotificationsPage } from '../../notifications/notifications';
 
 /**
  * Generated class for the HometabPage page.
@@ -42,6 +43,9 @@ export class HometabPage {
   goRestaurant(index) {
     this.gs.setTabBarHiddentStatus(true);
     this.navCtrl.push(RestaurantPage, { restaurant: this.restaurantsList[index] });
+  }
+  notification() {
+    this.navCtrl.push(NotificationsPage);
   }
 
 }

@@ -34,6 +34,7 @@ import { DeletefavoritePage } from '../pages/tabs/favoritetab/deletefavorite/del
 import { EditfavoritePage } from '../pages/tabs/favoritetab/editfavorite/editfavorite';
 import { RestaurantfilterPage } from '../pages/restaurantfilter/restaurantfilter';
 import { ReorderbreakdownPage } from '../pages/tabs/recordertab/reorderbreakdown/reorderbreakdown';
+import { NotificationsPage } from '../pages/notifications/notifications';
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -64,7 +65,8 @@ export function createTranslateLoader(http: Http) {
     DeletefavoritePage,
     EditfavoritePage,
     RestaurantfilterPage,
-    ReorderbreakdownPage
+    ReorderbreakdownPage,
+    NotificationsPage
   ],
   imports: [
     BrowserModule,
@@ -105,7 +107,8 @@ export function createTranslateLoader(http: Http) {
     DeletefavoritePage,
     EditfavoritePage,
     RestaurantfilterPage,
-    ReorderbreakdownPage
+    ReorderbreakdownPage,
+    NotificationsPage
   ],
   providers: [
     StatusBar,

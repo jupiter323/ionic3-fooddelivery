@@ -8,8 +8,10 @@
   <ion-row class="header-row">
     <ion-row class="header-title">
       <ion-col no-padding col-1 (click)="gs.filter()">
-        <svg class="left-icon" width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V2.83337H28V0H0ZM10.8889 17H17.1111V14.1666H10.8889V17ZM23.3333 9.91675H4.66666V7.08337H23.3333V9.91675Z"
+        <svg class="left-icon" width="28" height="17" viewBox="0 0 28 17" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M0 0V2.83337H28V0H0ZM10.8889 17H17.1111V14.1666H10.8889V17ZM23.3333 9.91675H4.66666V7.08337H23.3333V9.91675Z"
             fill="white" />
         </svg>
       </ion-col>
@@ -17,11 +19,12 @@
         Reorder/<strong (click)="expandHeader()">{{addressList[selectedAddressIndex]}}</strong>
         <ion-icon [name]="expandedHeader?'ios-arrow-up':'ios-arrow-down'"></ion-icon>
       </span>
-      <ion-col col-1 class="right-col" no-padding>
+      <ion-col col-1 class="right-col" no-padding (click)="notification()">
         <div class="notification">
           <ion-badge>6</ion-badge>
           <svg class="" width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2353 7V11.5294L15 13.1765V14H0V13.1765L1.76471 11.5294V7C1.76471 4.44702 3.61768 2.38818 6.17645 1.81177V1.23535C6.17645 0.576416 6.79413 0 7.5 0C8.20587 0 8.82355 0.576416 8.82355 1.23535V1.81177C11.3823 2.38818 13.2353 4.44702 13.2353 7ZM10 15C10 16.1 9.09998 17 8 17C6.90002 17 6 16.1 6 15H10Z"
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M13.2353 7V11.5294L15 13.1765V14H0V13.1765L1.76471 11.5294V7C1.76471 4.44702 3.61768 2.38818 6.17645 1.81177V1.23535C6.17645 0.576416 6.79413 0 7.5 0C8.20587 0 8.82355 0.576416 8.82355 1.23535V1.81177C11.3823 2.38818 13.2353 4.44702 13.2353 7ZM10 15C10 16.1 9.09998 17 8 17C6.90002 17 6 16.1 6 15H10Z"
               fill="white" />
           </svg>
         </div>
@@ -30,7 +33,8 @@
   </ion-row>
   <ion-searchbar *ngIf="!expandedHeader"></ion-searchbar>
   <div *ngIf="expandedHeader">
-    <ion-label *ngFor="let address of addressList;let index=index" [ngClass]="index==selectedAddressIndex?'appand-list selected-address':'appand-list'"
+    <ion-label *ngFor="let address of addressList;let index=index"
+      [ngClass]="index==selectedAddressIndex?'appand-list selected-address':'appand-list'"
       (click)="selectedAddressIndex=index;expandHeader()">
       {{address}}
     </ion-label>
@@ -61,7 +65,8 @@
     <ion-list>
       <ion-item *ngFor="let orders of ordersList;let ordersIndex=index" (click)="goReorder()">
         <div item-left [ngClass]="orders.restaurants.length==1?'avatar':'avatars'">
-          <ion-avatar [ngClass]="'avatar'+restaurantIndex" *ngFor="let restaurant of orders.restaurants;let restaurantIndex=index">
+          <ion-avatar [ngClass]="'avatar'+restaurantIndex"
+            *ngFor="let restaurant of orders.restaurants;let restaurantIndex=index">
             <img [src]="restaurant.logo">
           </ion-avatar>
         </div>

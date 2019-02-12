@@ -10,6 +10,7 @@ import { ChangenumberPage } from '../pages/tabs/profiletab/changenumber/changenu
 import { LoginPage } from '../pages/login/login';
 import { RestaurantfilterPage } from '../pages/restaurantfilter/restaurantfilter';
 import { OnboardingPage } from '../pages/onboarding/onboarding';
+import { NotificationsPage } from '../pages/notifications/notifications';
 @Component({
   templateUrl: 'app.html'
 })

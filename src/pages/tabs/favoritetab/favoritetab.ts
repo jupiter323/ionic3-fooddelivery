@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { RestaurantPage } from '../../restaurant/restaurant';
 import { GloabalProvider } from '../../../providers/gloabal/gloabal';
 import { EditfavoritePage } from './editfavorite/editfavorite';
+import { NotificationsPage } from '../../notifications/notifications';
 
 /**
  * Generated class for the FavoritetabPage page.
@@ -17,7 +18,7 @@ import { EditfavoritePage } from './editfavorite/editfavorite';
   templateUrl: 'favoritetab.html',
 })
 export class FavoritetabPage {
- 
+
   expandedHeader: boolean = false;
   addressList = ["Address 1", "Address 2", "Address 3", "Address 4", "Address 5"];
   selectedAddressIndex = 0;
@@ -30,7 +31,7 @@ export class FavoritetabPage {
   offScreens = ["assets/imgs/offimage.png", "assets/imgs/offimage.png", "assets/imgs/offimage.png", "assets/imgs/offimage.png"]
   offSlide: boolean = false;
   orderStatus: boolean = false;
-  constructor(  
+  constructor(
     private gs: GloabalProvider,
     public navCtrl: NavController) {
 
@@ -47,4 +48,8 @@ export class FavoritetabPage {
   goEditFavorite() {
     this.navCtrl.push(EditfavoritePage);
   }
+  notification() {
+    this.navCtrl.push(NotificationsPage);
+  }
+
 }
