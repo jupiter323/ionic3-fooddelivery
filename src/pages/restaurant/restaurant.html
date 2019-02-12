@@ -81,44 +81,136 @@
       <p>About</p>
     </div>
   </ion-row>
-  <div *ngIf="selectedTab==0" class="tab-body-menu">
-    <ion-row class="buttons">
-      <table>
-        <tr>
-          <td>
-            <button ion-button [ngClass]="selectedCuisine==0?'selected-btn':'unselected-btn'" (click)="selected(0)">Sandwiches</button>
-          </td>
-          <td>
-            <button ion-button [ngClass]="selectedCuisine==1?'selected-btn':'unselected-btn'" (click)="selected(1)">Drinks</button>
-          </td>
-          <td>
-            <button ion-button [ngClass]="selectedCuisine==2?'selected-btn':'unselected-btn'" (click)="selected(2)">Ice
-              Cream</button>
-          </td>
-          <td>
-            <button ion-button [ngClass]="selectedCuisine==3?'selected-btn':'unselected-btn'" (click)="selected(3)">Tea</button>
-          </td>
-          <td>
-            <button ion-button [ngClass]="selectedCuisine==4?'selected-btn':'unselected-btn'" (click)="selected(4)">Coffee</button>
-          </td>
-        </tr>
-      </table>
-    </ion-row>
-    <div>
-      <ion-list>
-        <ion-item *ngFor="let cuisines of cuisinesList[selectedCuisine];let cuisineIndex=index" (click)="goDish(cuisineIndex)">
-          <ion-avatar item-left>
-            <img [src]="cuisines['img']">
-          </ion-avatar>
-          <ion-label class="name-des">
-            {{cuisines.kind}}<br>
-            {{cuisines.detail}}
-          </ion-label>
-          <ion-label class="jod" slot="end">
-            {{cuisines.jod}}.00 <span>JOD</span>
-          </ion-label>
-        </ion-item>
-      </ion-list>
+  <div [ngSwitch]="selectedTab">
+    <div *ngSwitchCase="restaurantTab.MENU_TAB" class="tab-body-menu">
+      <ion-row class="buttons">
+        <table>
+          <tr>
+            <td>
+              <button ion-button [ngClass]="selectedCuisine==0?'selected-btn':'unselected-btn'" (click)="selected(0)">Sandwiches</button>
+            </td>
+            <td>
+              <button ion-button [ngClass]="selectedCuisine==1?'selected-btn':'unselected-btn'" (click)="selected(1)">Drinks</button>
+            </td>
+            <td>
+              <button ion-button [ngClass]="selectedCuisine==2?'selected-btn':'unselected-btn'" (click)="selected(2)">Ice
+                Cream</button>
+            </td>
+            <td>
+              <button ion-button [ngClass]="selectedCuisine==3?'selected-btn':'unselected-btn'" (click)="selected(3)">Tea</button>
+            </td>
+            <td>
+              <button ion-button [ngClass]="selectedCuisine==4?'selected-btn':'unselected-btn'" (click)="selected(4)">Coffee</button>
+            </td>
+          </tr>
+        </table>
+      </ion-row>
+      <div>
+        <ion-list>
+          <ion-item *ngFor="let cuisines of cuisinesList[selectedCuisine];let cuisineIndex=index" (click)="goDish(cuisineIndex)">
+            <ion-avatar item-left>
+              <img [src]="cuisines['img']">
+            </ion-avatar>
+            <ion-label class="name-des">
+              {{cuisines.kind}}<br>
+              {{cuisines.detail}}
+            </ion-label>
+            <ion-label class="jod" slot="end">
+              {{cuisines.jod}}.00 <span>JOD</span>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+    <div *ngSwitchCase="restaurantTab.REVIEWS_TAB" padding>
+      <ion-row class="space-between align-center">
+        <span class="title">
+          (2) Community reviews
+        </span>
+        <span class="rate">
+          <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.8561 15.7581C13.9749 15.6171 14.0297 15.4342 14.0078 15.2522L13.4282 10.3521L16.8202 6.72128C16.9865 6.54362 17.0426 6.29127 16.9668 6.06134C16.891 5.8314 16.6952 5.65971 16.4547 5.61233L11.5465 4.64133L9.09104 0.340685C8.97091 0.130232 8.74497 0 8.5 0C8.25503 0 8.02909 0.130232 7.90896 0.340685L5.45345 4.64133L0.545286 5.61233C0.304784 5.65971 0.108972 5.8314 0.033195 6.06134C-0.0425815 6.29127 0.013486 6.54362 0.179824 6.72128L3.57184 10.3521L2.99223 15.2522C2.96312 15.4924 3.06795 15.7294 3.26634 15.8719C3.46472 16.0143 3.7257 16.04 3.94873 15.939L8.5 13.8787L13.0513 15.939C13.154 15.9853 13.2669 16.0056 13.3796 15.998C13.5651 15.9858 13.7374 15.8991 13.8561 15.7581Z"
+              fill="#545454" />
+          </svg>
+          4.5
+        </span>
+      </ion-row>
+      <br>
+      <div class="cross-line"></div>
+
+      <ion-row *ngFor="let review of reviewList;let index=index" class="review">
+        <ion-col col-2>
+          <div *ngIf="review.img" class="avatar">
+            <img [src]="review.img">
+          </div>
+          <!-- avatar placeholder -->
+          <svg *ngIf="!review.img" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z"
+              fill="#F1F1F1" />
+            <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="28" height="28">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28Z"
+                fill="white" />
+            </mask>
+            <g mask="url(#mask0)">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M20 13C20 16.3125 17.3125 19 14 19C10.6875 19 8 16.3125 8 13C8 9.6875 10.6875 7 14 7C17.3125 7 20 9.6875 20 13ZM16.4901 20H18.75C21.6498 20 24 22.3877 24 25.3335V26C24 27.104 23.1182 28 22.0312 28H4.96875C3.88184 28 3 27.104 3 26V25.3335C3 22.3877 5.35022 20 8.25 20H10.5099C11.4246 20.4248 12.4336 20.6665 13.5 20.6665C14.5664 20.6665 15.5795 20.4248 16.4901 20Z"
+                fill="#919191" />
+            </g>
+          </svg>
+        </ion-col>
+        <ion-col col-10>
+          <ion-row class="space-between">
+            <div class="name">{{review.name}}</div>
+            <span class="date">{{review.date}}</span>
+          </ion-row>
+          <div>
+            <span *ngIf="index+1<reviewList.length" class="rate">Rated&nbsp;&nbsp;</span>
+            <div *ngIf="index+1==reviewList.length" class="rate">Add your Rating<p></p>
+            </div>
+            <span *ngFor="let i of [1,2,3,4,5]">
+              <!-- fill star -->
+              <svg *ngIf="i<=review.rate" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.225 14.4839C12.3298 14.357 12.3781 14.1923 12.3588 14.0285L11.8474 9.61754L14.8401 6.34918C14.9869 6.18925 15.0363 5.96209 14.9695 5.75511C14.9026 5.54813 14.7299 5.39358 14.5177 5.35093L10.1873 4.47686L8.02084 0.605506C7.91486 0.41606 7.71552 0.298828 7.49938 0.298828C7.28325 0.298828 7.08391 0.41606 6.97792 0.605506L4.81147 4.47686L0.481095 5.35093C0.268905 5.39358 0.0961435 5.54813 0.0292873 5.75511C-0.0375689 5.96209 0.0118984 6.18925 0.158655 6.34918L3.15136 9.61754L2.63998 14.0285C2.6143 14.2448 2.70679 14.4581 2.88183 14.5863C3.05686 14.7145 3.28711 14.7376 3.48388 14.6467L7.49938 12.7921L11.5149 14.6467C11.6055 14.6885 11.7051 14.7067 11.8046 14.6999C11.9682 14.6889 12.1202 14.6108 12.225 14.4839Z"
+                  fill="#228D8C" />
+              </svg>
+              <!-- blank star -->
+              <svg *ngIf="i>review.rate" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.2087 13.3368C12.2399 13.6132 12.1621 13.894 11.9877 14.114C11.8125 14.335 11.5532 14.4769 11.2671 14.4971C11.2668 14.4972 11.2666 14.4972 11.2664 14.4972L11.2315 13.9984L12.2087 13.3368ZM12.2087 13.3368C12.2087 13.3366 12.2087 13.3363 12.2086 13.3361M12.2087 13.3368L12.2088 13.3371L11.7118 13.3924L12.2086 13.3361M12.2086 13.3361L11.79 9.5753M12.2086 13.3361L11.79 9.5753M11.79 9.5753L14.2376 6.79161C14.4824 6.51381 14.5607 6.12664 14.4522 5.77671C14.3432 5.42541 14.0562 5.14839 13.6859 5.07071C13.6858 5.07071 13.6858 5.0707 13.6858 5.07069C13.6857 5.07067 13.6856 5.07065 13.6855 5.07063L10.1601 4.3296L8.39243 1.04017C8.39242 1.04016 8.39241 1.04014 8.3924 1.04013C8.21734 0.714305 7.8796 0.5 7.5 0.5C7.1204 0.5 6.78266 0.714304 6.6076 1.04013C6.60759 1.04014 6.60758 1.04016 6.60757 1.04017L11.79 9.5753ZM10.7637 14.401L10.7643 14.4013L1.31455 5.07063L1.41698 5.56002L1.31413 5.07071L1.31437 5.07066C0.943951 5.14827 0.656817 5.42533 0.547829 5.77671C0.439343 6.12647 0.517512 6.51344 0.762022 6.7912C0.762058 6.79124 0.762094 6.79128 0.76213 6.79133C0.762211 6.79142 0.762293 6.79151 0.762375 6.7916L3.21003 9.5753L2.79139 13.3358L3.28817 13.3924L2.79124 13.3371L2.7913 13.3366C2.75013 13.7 2.89807 14.0673 3.19452 14.2934C3.49422 14.522 3.89452 14.5654 4.23634 14.401C4.23636 14.401 4.23638 14.401 4.2364 14.401L7.5 12.8313L10.7637 14.401ZM4.83991 4.3296L4.72985 4.5344L5.17029 4.77108L5.06744 4.28178L4.83991 4.3296Z"
+                  stroke="#228D8C" />
+              </svg>
+
+            </span>
+            <p></p>
+            <div class="des">{{review.des}}</div>
+          </div>
+        </ion-col>
+        <div *ngIf="index+1<reviewList.length" class="cross-line"></div>
+      </ion-row>
+      <ion-row class="feedback-make">
+        <ion-col col-2></ion-col>
+        <ion-col col-7>
+          <ion-input type="text" placeholder="Write a feedback"></ion-input>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button class="normal-btn">Send</button>
+        </ion-col>
+      </ion-row>
+
+    </div>
+    <div *ngSwitchCase="restaurantTab.ABOUT_TAB" padding>
+      <div class="title">Restaurant Information</div>
+      <div class="des">
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet libero iaculis, egestas ante ac,<br><br>
+        Address: Verkhnii Val St, 22, Kiev, Ukraine<br><br>
+        Cuisine Type: Fast Food<br><br>
+        Payment Option: Cash, Credit Card<br><br>
+        Minimum Order: 5.00JOD<br><br>
+        Delivery Time: 45 minutes<br><br>
+        Delivery Fee: 3.00JOD<br><br>
+        Tax: 2.5%<br><br>
+        Opening Hours: 9:00- 22:00
+      </div>
+
     </div>
   </div>
 </ion-content>

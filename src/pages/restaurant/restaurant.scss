@@ -145,5 +145,96 @@ page-restaurant {
                 }
             }
         }
+        .title {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 22px;
+            font-size: 20px;
+            letter-spacing: -0.282353px;
+            color: #545454;
+        }
+        .des {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 15px;
+            font-size: 14px;
+            text-align: justify;
+            letter-spacing: 0.282353px;
+            color: #545454;
+        }
+        .rate {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 22px;
+            font-size: 22px;
+            letter-spacing: -0.282353px;
+            color: #545454;
+        }
+        .review {
+            .avatar {
+                img {
+                    width: 28px !important;
+                    height: 28px !important;
+                    border-radius: 14px !important;
+                }
+            }
+            .name {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: bold;
+                line-height: 21px;
+                font-size: 16px;
+                color: #545454;
+            }
+            .date,
+            .rate {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: normal;
+                font-size: 14px; // text-align: right;
+                color: #545454;
+            }
+            .des {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 15px;
+                font-size: 12px;
+                text-align: justify;
+                letter-spacing: 0.282353px;
+                color: #545454;
+            }
+        }
+        .feedback-make {
+            align-items: center;
+            ion-input {
+                background: #F1F1F1;
+                border: 1px solid #E4E4E4;
+                box-sizing: border-box;
+                height: 34px;
+                border-radius: 17px;
+                color: #228D8C;
+                font-size: 14px;
+                input {
+                    margin-top: 7px !important;
+                }
+                ::-webkit-input-placeholder {
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    line-height: 14px;
+                    font-size: 14px;
+                    color: #AEAEAE;
+                }
+            }
+            .normal-btn {
+                height: 34px !important;
+                border-radius: 17px !important;
+            }
+        }
     }
 }

@@ -9,17 +9,21 @@ import { DishdetailPage } from './dishdetail/dishdetail';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
+enum RESTAURANT_TAB {
+  MENU_TAB,
+  REVIEWS_TAB,
+  ABOUT_TAB
+}
 @IonicPage()
 @Component({
   selector: 'page-restaurant',
   templateUrl: 'restaurant.html',
 })
 export class RestaurantPage {
-
+  restaurantTab = RESTAURANT_TAB;
   restaurant: Object;
   selectedCuisine = 0;
-  selectedTab = 0;
+  selectedTab = RESTAURANT_TAB.MENU_TAB;
   cuisinesList = [
     [
       { img: "assets/imgs/dish1.png", kind: "Sandwich name", detail: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", jod: 5.00 },
@@ -33,6 +37,11 @@ export class RestaurantPage {
     ],
     [], [], []];
 
+  reviewList = [
+    { img: "assets/imgs/profile.png", name: "Herve", rate: 5, date: "Nov 15, 2015", des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet libero iaculis, egestas ante ac," },
+    { img: "", name: "Herve", rate: 4, date: "Nov 15, 2015", des: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet libero iaculis, egestas ante ac," },
+  ]
+  reviewBlank = { img: "", name: "Herve", rate: 0, date: "Nov 15, 2015", des: "" };
   constructor(
     private gs: GloabalProvider,
     public navCtrl: NavController, public navParams: NavParams) {
@@ -41,6 +50,7 @@ export class RestaurantPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RestaurantPage');
+    this.reviewList.push(this.reviewBlank);
   }
   ionViewWillLeave() {
     this.gs.setTabBarHiddentStatus(false);
