@@ -18,8 +18,20 @@ export class RecordertabPage {
   expandedHeader: boolean = false;
   addressList = ["Address 1", "Address 2", "Address 3", "Address 4", "Address 5"];
   selectedAddressIndex = 0;
+
+  offScreens = ["assets/imgs/offimage.png", "assets/imgs/offimage.png", "assets/imgs/offimage.png", "assets/imgs/offimage.png"]
+  offSlide: boolean = false;
+  orderStatus: boolean = false;
+
+  ordersList = [
+    { date: "11, Sep", jod: 5, des: "Lorem ipsum dolor sit amet, consectetur", restaurants: [{ name: "Salt", logo: "assets/imgs/logo1.png" }, { name: "KFC", logo: "assets/imgs/logo2.png" }] },
+    { date: "11, Sep", jod: 5, des: "Lorem ipsum dolor sit amet, consectetur", priceadjustment: "There is a price adjustments", restaurants: [{ name: "Spago", logo: "assets/imgs/logo4.png" }] },
+    { date: "11, Sep", jod: 5, des: "Lorem ipsum dolor sit amet, consectetur", restaurants: [{ name: "Salt", logo: "assets/imgs/logo1.png" }, { name: "Spago", logo: "assets/imgs/logo4.png" }, { name: "KFC", logo: "assets/imgs/logo2.png" }] },
+    { date: "11, Sep", jod: 5, des: "Lorem ipsum dolor sit amet, consectetur", restaurants: [{ name: "Spago", logo: "assets/imgs/logo3.png" }, { name: "KFC", logo: "assets/imgs/logo2.png" }] },
+    { date: "11, Sep", jod: 5, des: "Lorem ipsum dolor sit amet, consectetur", restaurants: [{ name: "Salt", logo: "assets/imgs/logo1.png" }, { name: "KFC", logo: "assets/imgs/logo2.png" }] },
+  ];
   constructor(
-    private gs:GloabalProvider,
+    private gs: GloabalProvider,
     public navCtrl: NavController, public navParams: NavParams) {
   }
 

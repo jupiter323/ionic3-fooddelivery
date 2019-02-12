@@ -18,7 +18,7 @@ export class GloabalProvider {
     console.log('Hello GloabalProvider Provider');
     translate.setDefaultLang('en');
   }
-  // helpera
+  // helpers
   filter() {
     var modalPage = this.modalCtl.create(RestaurantfilterPage);
     modalPage.onDidDismiss((data) => {

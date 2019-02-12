@@ -61,4 +61,123 @@ page-recordertab {
             }
         }
     }
+    ion-content {
+        ion-slides {
+            height: 28vh;
+            width: 100%;
+            overflow: hidden;
+            .swiper-pagination-bullet {
+                border: 1px solid #FFFFFF;
+                background: none;
+                opacity: 1;
+            }
+            .swiper-pagination-bullet-active {
+                background: white;
+            }
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        ion-list {
+            .name-des {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 15px;
+                font-size: 14px;
+                letter-spacing: 0.282353px;
+                color: #545454;
+                width: 1000px !important;
+            }
+            .jod {
+                text-align: right;
+                width: 50px;
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: 15px;
+                font-size: 19px;
+                letter-spacing: 0.329412px;
+                color: #228D8C;
+                span {
+                    font-size: 16px;
+                }
+            }
+        }
+        .avatars,
+        .avatar {
+            position: relative;
+            width: 20%;
+            height: 10vh;
+            img {
+                box-shadow: 1px 1px 1px 1px gray;
+            }
+        }
+        .avatars {
+            ion-avatar.avatar0 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            ion-avatar.avatar1 {
+                position: absolute;
+                top: 10px;
+                right: 0;
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+            ion-avatar.avatar2 {
+                position: absolute;
+                top: 20px;
+                left: 5px;
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+        .avatar {
+            ion-avatar {
+                // margin: auto;                
+                img {
+                    width: 42px;
+                    height: 42px;
+                }
+            }
+        }
+        .priceadjustment {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 15px;
+            font-size: 12px;
+            letter-spacing: 0.282353px;
+            color: #FF0000;
+        }
+        .restaurants {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 15px;
+            font-size: 15px !important;
+            letter-spacing: 0.282353px;
+            color: #545454;
+        }
+        .date {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 15px;
+            font-size: 14px;
+            letter-spacing: 0.282353px;
+            color: #545454;
+        }
+    }
 }

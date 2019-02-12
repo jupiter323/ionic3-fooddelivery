@@ -50,6 +50,35 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-slides *ngIf="offSlide" pager="true">
+    <ion-slide *ngFor="let off of offScreens">
+      <img [src]="off">
+    </ion-slide>
+  </ion-slides>
+
+  <div>
+    <ion-list>
+      <ion-item *ngFor="let orders of ordersList;let ordersIndex=index">
+        <div item-left [ngClass]="orders.restaurants.length==1?'avatar':'avatars'">
+          <ion-avatar [ngClass]="'avatar'+restaurantIndex" *ngFor="let restaurant of orders.restaurants;let restaurantIndex=index">
+            <img [src]="restaurant.logo">
+          </ion-avatar>
+        </div>
+        <ion-label class="name-des">
+          <span class="restaurants" *ngFor="let restaurant of orders.restaurants;let restaurantIndex=index">
+            {{restaurant.name }}<span *ngIf="restaurantIndex+1<orders.restaurants.length">,</span>
+          </span><br><br>
+          {{orders.des}}
+          <div class="priceadjustment">{{orders.priceadjustment}}</div>
+        </ion-label>
+        <ion-label class="jod" slot="end">
+          <div class="date">{{orders.date}}</div><br>
+          {{orders.jod}}.00 <span>JOD</span>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+
 
 </ion-content>

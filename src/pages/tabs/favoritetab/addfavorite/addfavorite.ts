@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { GloabalProvider } from '../../../../providers/gloabal/gloabal';
-import { RestaurantfilterPage } from '../../../restaurantfilter/restaurantfilter';
 /**
  * Generated class for the AddfavoritePage page.
  *
@@ -26,21 +25,12 @@ export class AddfavoritePage {
   offScreens = ["assets/imgs/offimage.png", "assets/imgs/offimage.png", "assets/imgs/offimage.png", "assets/imgs/offimage.png"]
   offSlide: boolean = false;
   orderStatus: boolean = false;
-  constructor(
-    private modalCtl: ModalController,
+  constructor(    
     private gs: GloabalProvider,
     public navCtrl: NavController) {
 
   }
 
-
-  filter() {
-    var modalPage = this.modalCtl.create(RestaurantfilterPage);
-    modalPage.onDidDismiss((data)=>{
-      console.log(data);
-    })
-    modalPage.present();
-  }
 
 
 }
