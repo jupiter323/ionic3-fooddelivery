@@ -1,0 +1,166 @@
+<!--
+  Generated template for the ReorderbreakdownPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-row class="header-row">
+    <ion-row class="header-title">
+      <ion-col *ngIf="!isDeleteStatus" col-1 (click)="navCtrl.pop()">
+        <ion-icon class="left-icon" name="ios-arrow-back"></ion-icon>
+      </ion-col>
+      <ion-col *ngIf="isDeleteStatus" col-3>
+        <p class="sub-title" (click)="isDeleteStatus=false">Cancel</p>
+      </ion-col>
+      <span>
+        Reorder
+      </span>
+      <ion-col *ngIf="isDeleteStatus" col-3>
+        <p class="sub-title" (click)="deleteOrders()">Delete</p>
+      </ion-col>
+      <ion-col *ngIf="!isDeleteStatus" col-1>
+        <ion-icon class="right-icon" name="md-add"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-row>
+</ion-header>
+<ion-content padding>
+  <div class="segment">
+    <div class="step-wraper">
+      <svg class="step" width="100%" height="41" viewBox="0 0 318 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M19.5 40C8.73045 40 0 31.2696 0 20.5C0 9.73045 8.73045 1 19.5 1C30.2696 1 39 9.73045 39 20.5C39 31.2696 30.2696 40 19.5 40Z"
+          fill="#228D8C" />
+        <path d="M20.8311 29H18.833V15.7549L14.8262 17.2266V15.4219L20.5195 13.2842H20.8311V29Z" fill="white" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M297.5 40C286.73 40 278 31.2696 278 20.5C278 9.73045 286.73 1 297.5 1C308.27 1 317 9.73045 317 20.5C317 31.2696 308.27 40 297.5 40Z"
+          stroke="#8B8B8B" />
+        <path d="M302.548 29H292.3V27.5713L297.714 21.5557C298.516 20.6462 299.067 19.9085 299.368 19.3428C299.676 18.7699 299.83 18.179 299.83 17.5703C299.83 16.7539 299.583 16.0843 299.089 15.5615C298.595 15.0387 297.936 14.7773 297.112 14.7773C296.124 14.7773 295.354 15.0602 294.803 15.626C294.258 16.1846 293.986 16.9652 293.986 17.9678H291.999C291.999 16.5283 292.461 15.3646 293.385 14.4766C294.316 13.5885 295.558 13.1445 297.112 13.1445C298.566 13.1445 299.715 13.5277 300.561 14.2939C301.406 15.0531 301.828 16.0664 301.828 17.334C301.828 18.8737 300.847 20.707 298.885 22.834L294.695 27.3779H302.548V29Z"
+          fill="#8B8B8B" />
+        <path d="M39.5587 20.5H276.441" stroke="#228D8C" stroke-width="0.5" stroke-linecap="square" stroke-dasharray="4 5" />
+      </svg>
+      <ion-row class="step-row">
+        <div class="active">
+          <span>Order</span><br><span>List</span>
+        </div>
+        <div class="right ">
+          <span>Shipping</span><br><span>Info</span>
+        </div>
+      </ion-row>
+    </div>
+    <ion-list *ngFor="let restaurantFood of odrderList;let restaurantIndex=index">
+      <ion-row *ngIf="restaurantFood.dishes.length!=0" class="restaurant gray-back-row">
+        <img [src]="restaurantFood.restaurant.img">
+        <span> {{restaurantFood.restaurant.name}}</span>
+      </ion-row>
+      <ion-item-sliding *ngFor="let dishe of restaurantFood.dishes;let dishIndex=index">
+        <ion-item text-wrap class="food">
+          <ion-row>
+            <ion-col col-1 *ngIf="isDeleteStatus">
+              <ion-row class="full-height align-center">
+                <ion-icon [color]="dishe.selected?'danger':'gray'" [name]="dishe.selected?'md-checkbox':'md-square-outline'"
+                  (click)="dishe.selected=!dishe.selected"></ion-icon>
+              </ion-row>
+            </ion-col>
+            <ion-col col-2>
+              <ion-row class="full-height align-center">
+                <ion-avatar>
+                  <img [src]="dishe.img">
+                </ion-avatar>
+              </ion-row>
+            </ion-col>
+            <ion-col col-9>
+              <ion-row class="full-height align-center">
+                <ion-row class="space-between">
+                  <span class="sub-title">{{dishe.name}} </span>
+                  <span class="jod1">{{dishe.jod2}}.00<span>JOD</span></span>
+                </ion-row>
+                <span class="sub-title">
+                  {{dishe.detail}}
+                </span>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row class="cart-row">
+            <!-- remove icon -->
+            <ion-row class="full-height">
+              <ion-col col-5>
+                <ion-row *ngIf="dishe.orderstatus!=orderStatus.REPLACEORDER" class="align-center space-between">
+                  <svg (click)="removeCart(restaurantIndex,dishIndex)" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 39C30.4934 39 39 30.4934 39 20C39 9.50659 30.4934 1 20 1C9.50659 1 1 9.50659 1 20C1 30.4934 9.50659 39 20 39Z"
+                      stroke="#C2BEBE" />
+                    <path d="M27.186 20L13.814 20C13.5571 20 13 20.3489 13 21.0465C13 21.7441 13.5571 22.093 13.814 22.093H27.186C27.4429 22.093 28 21.7442 28 21.0465C28 20.3488 27.4428 20 27.186 20Z"
+                      fill="#C2BEBE" />
+                  </svg>
+
+                  <span class="cartcount">{{dishe.cartcount}}</span>
+                  <!-- add icon -->
+                  <svg (click)="addCart(restaurantIndex,dishIndex)" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 39C30.4934 39 39 30.4934 39 20C39 9.50659 30.4934 1 20 1C9.50659 1 1 9.50659 1 20C1 30.4934 9.50659 39 20 39Z"
+                      stroke="#C2BEBE" />
+                    <path d="M27.186 19.4535H21.5465V13.814C21.5465 13.5571 21.1976 13 20.5 13C19.8023 13 19.4535 13.5571 19.4535 13.814V19.4535H13.814C13.5571 19.4535 13 19.8023 13 20.5C13 21.1976 13.5571 21.5465 13.814 21.5465H19.4535V27.186C19.4535 27.4429 19.8023 28 20.5 28C21.1977 28 21.5465 27.4429 21.5465 27.186V21.5465H27.186C27.4429 21.5465 28 21.1977 28 20.5C28 19.8023 27.4428 19.4535 27.186 19.4535Z"
+                      fill="#C2BEBE" />
+                  </svg>
+                </ion-row>
+              </ion-col>
+              <ion-col col-1 *ngIf="dishe.orderstatus!=orderStatus.REPLACEORDER"></ion-col>
+              <ion-col col-6 *ngIf="dishe.orderstatus==orderStatus.REORDERABLE" (click)="reOrder(restaurantIndex, dishIndex)">
+                <button ion-button class="normal-btn space-between">
+                  <ion-icon name="ios-checkmark-circle"></ion-icon>&nbsp;<span>Reorder</span>
+                </button>
+              </ion-col>
+              <ion-col col-6 *ngIf="dishe.orderstatus==orderStatus.REORDERED">
+                <button ion-button color=light class="normal-btn space-between ordered">
+                  <ion-icon name="ios-checkmark-circle"></ion-icon>&nbsp;<span>Reorder</span>
+                </button>
+              </ion-col>
+              <ion-col col-7 *ngIf="dishe.orderstatus==orderStatus.REPLACEORDER" (click)="replaceOrder(restaurantIndex,dishIndex)">
+                <ion-row class="space-between align-center replace-order">
+                  <span>Replace order</span>
+                  <ion-icon name="ios-arrow-forward"></ion-icon>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+
+          </ion-row>
+        </ion-item>
+        <ion-item-options side="right">
+          <ion-row class="edit-btn-row" (click)="editReorder(restaurantIndex,dishIndex)">
+            <ion-icon color=light name="md-create"></ion-icon>
+          </ion-row>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
+
+  <div class="segment">
+    <div class="detail">
+      <ion-label class="sub-title">Please enter coupon code ( Optional )</ion-label>
+      <ion-input type="tel" maxLength=4 placeholder="X X X X" [(ngModel)]="formData.coupon" (ionChange)="validateCoupon()"></ion-input>
+      <ion-label class="sub-title">General Request</ion-label>
+      <ion-input type="text" placeholder="Enter text" [(ngModel)]="formData.generalrequest"></ion-input>
+    </div>
+  </div>
+
+  <div class="segment">
+    <ion-row class="budget">
+      <ion-label class="sub-title">Subtotal</ion-label>
+      <span>{{5}}.00<span>JOD</span></span>
+    </ion-row>
+    <ion-row *ngIf="couponValidated" class="coupon">
+      <ion-label class="sub-title">Coupon Discount</ion-label>
+      <span>{{15}}%</span>
+    </ion-row>
+    <ion-row class="budget">
+      <ion-label class="sub-title">VAT(16%)</ion-label>
+      <span>{{5}}.00<span>JOD</span></span>
+    </ion-row>
+    <ion-row class="budget">
+      <ion-label class="sub-title">Total</ion-label>
+      <span *ngIf="couponValidated" class=" cross">{{30.00}}<span>JOD</span></span>
+      <span>{{25}}.00<span>JOD</span></span>
+    </ion-row>
+  </div>
+  <button ion-button class="normal-btn" (click)="next()">Next</button>
+</ion-content>

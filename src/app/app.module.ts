@@ -33,6 +33,7 @@ import { AddfavoritePage } from '../pages/tabs/favoritetab/addfavorite/addfavori
 import { DeletefavoritePage } from '../pages/tabs/favoritetab/deletefavorite/deletefavorite';
 import { EditfavoritePage } from '../pages/tabs/favoritetab/editfavorite/editfavorite';
 import { RestaurantfilterPage } from '../pages/restaurantfilter/restaurantfilter';
+import { ReorderbreakdownPage } from '../pages/tabs/recordertab/reorderbreakdown/reorderbreakdown';
 export function createTranslateLoader(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -62,7 +63,8 @@ export function createTranslateLoader(http: Http) {
     AddfavoritePage,
     DeletefavoritePage,
     EditfavoritePage,
-    RestaurantfilterPage
+    RestaurantfilterPage,
+    ReorderbreakdownPage
   ],
   imports: [
     BrowserModule,
@@ -102,7 +104,8 @@ export function createTranslateLoader(http: Http) {
     AddfavoritePage,
     DeletefavoritePage,
     EditfavoritePage,
-    RestaurantfilterPage   
+    RestaurantfilterPage,
+    ReorderbreakdownPage
   ],
   providers: [
     StatusBar,

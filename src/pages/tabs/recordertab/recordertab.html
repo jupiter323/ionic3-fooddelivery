@@ -59,7 +59,7 @@
 
   <div>
     <ion-list>
-      <ion-item *ngFor="let orders of ordersList;let ordersIndex=index">
+      <ion-item *ngFor="let orders of ordersList;let ordersIndex=index" (click)="goReorder()">
         <div item-left [ngClass]="orders.restaurants.length==1?'avatar':'avatars'">
           <ion-avatar [ngClass]="'avatar'+restaurantIndex" *ngFor="let restaurant of orders.restaurants;let restaurantIndex=index">
             <img [src]="restaurant.logo">

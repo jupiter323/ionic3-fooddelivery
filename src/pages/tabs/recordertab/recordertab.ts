@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { GloabalProvider } from '../../../providers/gloabal/gloabal';
+import { ReorderbreakdownPage } from './reorderbreakdown/reorderbreakdown';
 
 /**
  * Generated class for the RecordertabPage page.
@@ -41,6 +42,9 @@ export class RecordertabPage {
 
   expandHeader() {
     this.expandedHeader = !this.expandedHeader;
+  }
+  goReorder() {
+    this.navCtrl.push(ReorderbreakdownPage);
   }
 
 }
