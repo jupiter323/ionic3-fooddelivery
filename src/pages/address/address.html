@@ -83,30 +83,18 @@
 
     <button ion-button class="add-btn" outline (click)="isAddNewAddress=true">+ Add New Address</button>
   </div>
-  <div *ngIf="!isAddNewAddress" class="segment">  
+  <div *ngIf="!isAddNewAddress" class="segment">
     <ion-label class="title">Choose Cuisine</ion-label>
-    <ion-row class="cuisine-row">
-      <ion-col col-4>
-        <button ion-button [ngClass]="selectedCuisine[0]?'selected-btn':'unselected-btn'" (click)="selected(0)">All</button>
-      </ion-col>
-      <ion-col col-4>
-        <button ion-button [ngClass]="selectedCuisine[1]?'selected-btn':'unselected-btn'" (click)="selected(1)">Chinese</button>
-      </ion-col>
-      <ion-col col-4>
-        <button ion-button [ngClass]="selectedCuisine[2]?'selected-btn':'unselected-btn'" (click)="selected(2)">Pizza</button>
-      </ion-col>
-    </ion-row>
-    <ion-row class="cuisine-row">
-      <ion-col col-4>
-        <button ion-button [ngClass]="selectedCuisine[3]?'selected-btn':'unselected-btn'" (click)="selected(3)">Homemade</button>
-      </ion-col>
-      <ion-col col-4>
-        <button ion-button [ngClass]="selectedCuisine[4]?'selected-btn':'unselected-btn'" (click)="selected(4)">Indian</button>
-      </ion-col>
-      <ion-col col-4>
-        <button ion-button [ngClass]="selectedCuisine[5]?'selected-btn':'unselected-btn'" (click)="selected(5)">Arabic</button>
-      </ion-col>
-    </ion-row>
+    <ion-slides pager="true">
+      <ion-slide *ngFor="let cuisineGroup of cuisineCroupList;let cuisineGroupIndex=index">
+        <ion-row class="cuisine-row">
+          <ion-col col-4 *ngFor="let cuisine of cuisineGroup;let cuisineIndex=index">
+            <button ion-button [ngClass]="selectedCuisine[cuisineGroupIndex*6+cuisineIndex]?'selected-btn':'unselected-btn'"
+              (click)="selected(cuisineGroupIndex,cuisineIndex)">{{cuisine}}</button>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
   </div>
   <p></p>
   <button *ngIf="!isAddNewAddress" ion-button class="normal-btn" (click)="pressedDone()">Done</button>

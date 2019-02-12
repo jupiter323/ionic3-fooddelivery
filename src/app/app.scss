@@ -217,7 +217,22 @@ ion-row {
         bottom: 0;
     }
 }
-
+.edit-btn {
+    height: 30px;
+    border-radius: 15px !important;
+    width: 45%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 21px;
+    font-size: 14px;
+    letter-spacing: 0.265294px;
+    color: #228D8C;
+    text-transform: capitalize;
+    ion-icon {
+        margin-right: 5px;
+    }
+}
 ion-content.back-image-first {
     background-image: url("../../assets/imgs/onboarding.png") !important;
 }
@@ -236,8 +251,7 @@ ion-content {
     .card-board {
         width: 85vw;
         margin: auto;
-        background: #FFFFFF;
-        border-radius: 13px;
+        background: #FFFFFF;       
         text-align: center;
         padding: 20px;
     }
@@ -698,22 +712,7 @@ ion-content {
             text-transform: capitalize;
             margin-left: 20% !important;
         }
-        .edit-btn {
-            height: 30px;
-            border-radius: 15px !important;
-            width: 45%;
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: normal;
-            line-height: 21px;
-            font-size: 14px;
-            letter-spacing: 0.265294px;
-            color: #228D8C;
-            text-transform: capitalize;
-            ion-icon {
-                margin-right: 5px;
-            }
-        }
+     
         ion-list {
             margin-top: 20px !important;
             ion-item {

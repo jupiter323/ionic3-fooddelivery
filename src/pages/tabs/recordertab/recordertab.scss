@@ -1,3 +1,64 @@
 page-recordertab {
-
+    ion-header.expand-header {
+        height: 30vh;
+    }
+    ion-header {
+        ion-searchbar {
+            padding: 0 15px 15px 15px !important;
+        }
+        .left-icon {
+            margin-left: 15px !important;
+            float: none !important;
+        }
+        .right-col {
+            padding-right: 0px !important;
+            margin-right: 4px !important;
+        }
+        .searchbar-ios {
+            background: none !important;
+        }
+        .appand-list {
+            text-align: center;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            font-size: 16px;
+            letter-spacing: -0.384px;
+            color: #FFFFFF;
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+            padding: 10px;
+        }
+        .selected-address {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            font-size: 25px;
+            letter-spacing: -0.6px;
+            color: #FFFFFF;
+            border-top: 1px solid #166A69;
+            border-bottom: 1px solid #166A69;
+        }
+        .order-status {
+            width: 100%;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            letter-spacing: 0.376471px;
+            color: #FFFFFF;
+            background: #0D5E5D;
+            .detail,
+            .title {
+                font-size: 15px;
+                justify-content: space-between;
+                padding: 15px 15px 15px 15px;
+            }
+            .title {
+                padding-bottom: 0;
+            }
+        }
+    }
 }

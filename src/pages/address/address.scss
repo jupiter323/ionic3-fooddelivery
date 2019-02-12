@@ -1,6 +1,19 @@
 page-address {
     ion-content {
         background: #E5E5E5 !important;
+        ion-slides {
+            height: 25vh;
+            width: 100%;
+            overflow: hidden;
+            .swiper-pagination-bullet {
+                border: 1px solid #228D8C;
+                background: white;
+                opacity: 1;
+            }
+            .swiper-pagination-bullet-active {
+                background: #228D8C;
+            }        
+        }
     }
     .scroll {
         height: 100%

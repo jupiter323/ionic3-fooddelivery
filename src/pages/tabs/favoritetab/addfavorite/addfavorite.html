@@ -1,5 +1,5 @@
 <!--
-  Generated template for the FavoritetabPage page.
+  Generated template for the AddfavoritePage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,35 +7,21 @@
 <ion-header>
   <ion-row class="header-row">
     <ion-row class="header-title">
-      <ion-col no-padding col-1 (click)="gs.filter()">
-        <svg class="left-icon" width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ion-col no-padding col-1 (click)="navCtrl.pop()">
+        <ion-icon class="left-icon" name="ios-arrow-back"></ion-icon>
+      </ion-col>
+      <span>
+        Add To Favorite
+      </span>
+      <ion-col col-1 class="right-col" no-padding (click)="filter()">
+        <svg class="right-icon" width="28" height="17" viewBox="0 0 28 17" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0V2.83337H28V0H0ZM10.8889 17H17.1111V14.1666H10.8889V17ZM23.3333 9.91675H4.66666V7.08337H23.3333V9.91675Z"
             fill="white" />
         </svg>
       </ion-col>
-      <span>
-        Favourit/<strong (click)="expandHeader()">{{addressList[selectedAddressIndex]}}</strong>
-        <ion-icon [name]="expandedHeader?'ios-arrow-up':'ios-arrow-down'"></ion-icon>
-      </span>
-      <ion-col col-1 class="right-col" no-padding>
-        <div class="notification">
-          <ion-badge>6</ion-badge>
-          <svg class="" width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2353 7V11.5294L15 13.1765V14H0V13.1765L1.76471 11.5294V7C1.76471 4.44702 3.61768 2.38818 6.17645 1.81177V1.23535C6.17645 0.576416 6.79413 0 7.5 0C8.20587 0 8.82355 0.576416 8.82355 1.23535V1.81177C11.3823 2.38818 13.2353 4.44702 13.2353 7ZM10 15C10 16.1 9.09998 17 8 17C6.90002 17 6 16.1 6 15H10Z"
-              fill="white" />
-          </svg>
-        </div>
-      </ion-col>
     </ion-row>
   </ion-row>
-  <ion-searchbar *ngIf="!expandedHeader"></ion-searchbar>
-  <div *ngIf="expandedHeader">
-    <ion-label *ngFor="let address of addressList;let index=index" [ngClass]="index==selectedAddressIndex?'appand-list selected-address':'appand-list'"
-      (click)="selectedAddressIndex=index;expandHeader()">
-      {{address}}
-    </ion-label>
-  </div>
-
+  <ion-searchbar></ion-searchbar>
   <div *ngIf="orderStatus" class="order-status">
     <ion-row class="title">
       <span>Order Status: </span>
@@ -56,14 +42,7 @@
     </ion-slide>
   </ion-slides>
   <div class="content">
-    <ion-row class="align-center space-between">
-      <div class="restaurant-list">Restaurant List</div>
-      <button ion-button class="edit-btn" outline (click)="goEditFavorite()">
-        <ion-icon name="md-create"></ion-icon> <span> Edit</span>
-      </button>
-    </ion-row>
-
-    <div class="segment" *ngFor="let restaurant of restaurantsList;let index=index" (click)="goRestaurant(index)">
+    <div class="segment" *ngFor="let restaurant of restaurantsList;let index=index" (click)="restaurant.selected=!restaurant.selected">
       <div class="background-wrap">
         <img [src]="restaurant.background">
       </div>
@@ -78,12 +57,12 @@
             <span class="restaurant-kind">{{restaurant.kind}}</span>
           </div>
           <!-- heart icon -->
-          <svg *ngIf="restaurant.off" width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg *ngIf="restaurant.selected" width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7.5 13L6.45 12.0109C2.55 8.76087 0 6.57065 0 3.88587C0 1.69565 1.8 0 4.125 0C5.4 0 6.675 0.565217 7.5 1.4837C8.325 0.565217 9.6 0 10.875 0C13.2 0 15 1.69565 15 3.88587C15 6.57065 12.45 8.76087 8.55 12.0109L7.5 13Z"
               fill="white" />
           </svg>
 
-          <svg *ngIf="!restaurant.off" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg *ngIf="!restaurant.selected" width="17" height="15" viewBox="0 0 17 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.5 14L7.45 13.0109C3.55 9.76087 1 7.57065 1 4.88587C1 2.69565 2.8 1 5.125 1C6.4 1 7.675 1.56522 8.5 2.4837C9.325 1.56522 10.6 1 11.875 1C14.2 1 16 2.69565 16 4.88587C16 7.57065 13.45 9.76087 9.55 13.0109L8.5 14Z"
               stroke="white" />
           </svg>

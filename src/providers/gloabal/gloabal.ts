@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { ModalController } from 'ionic-angular';
+import { RestaurantfilterPage } from '../../pages/restaurantfilter/restaurantfilter';
 /*
   Generated class for the GloabalProvider provider.
 
@@ -10,11 +12,21 @@ import { TranslateService } from '@ngx-translate/core';
 export class GloabalProvider {
   public isArabic: boolean = false;
   private isTabBarHidden: boolean = false;
-  constructor(public translate: TranslateService) {
+  constructor(
+    private modalCtl: ModalController,
+    public translate: TranslateService) {
     console.log('Hello GloabalProvider Provider');
     translate.setDefaultLang('en');
   }
-
+  // helpera
+  filter() {
+    var modalPage = this.modalCtl.create(RestaurantfilterPage);
+    modalPage.onDidDismiss((data) => {
+      console.log(data);
+    })
+    modalPage.present();
+  }
+  // control share value
   getCurrentLanguageArabic() {
     return this.isArabic;
   }

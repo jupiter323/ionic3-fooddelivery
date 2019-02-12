@@ -22,7 +22,7 @@ export class AddressPage {
   @ViewChild('map') mapElement: ElementRef;
   registeredStats: boolean = false;
   isAddNewAddress: boolean = false;
-  isEditAddress:boolean = false;
+  isEditAddress: boolean = false;
 
   map: any;
   latLng: any;
@@ -30,9 +30,10 @@ export class AddressPage {
   isType: any = "city_hall";
   addressInfo: { city: string, area: string, additional: string, title: string } = { city: "", area: "", additional: "", title: "" }
   cities = ["Adam", "Bdavi", "Emirate"];
-  areas = ["Cnad", "Liyad", "Cros"]; 
+  areas = ["Cnad", "Liyad", "Cros"];
 
-  selectedCuisine = [false, false, false, false, false, false];
+  selectedCuisine = [false, false, false, false, false, false, false, false, false, false, false, false];
+  cuisineCroupList = [["All", "Chinese", "Pizza", "Homemade", "Indian", "Arabic"], ["France", "Italy", "Korean", "Japanese", "American", "Cuba"]]
 
   addressList: Array<{ city: string, area: string, titles: Array<{ title: string, additional: string, selected: boolean }>, icon: string, showDetails: boolean }> = [];
 
@@ -40,7 +41,7 @@ export class AddressPage {
     public altCtrl: AlertController,
     public geoCtl: Geolocation,
     public navCtrl: NavController) {
-      
+
   }
 
   async ionViewDidLoad() {
@@ -136,7 +137,8 @@ export class AddressPage {
       this.registeredStats = true;
   }
   // cuisine control
-  selected(selectedIndex) {
+  selected(cuisineGroupIndex, cuisineIndex) {
+    let selectedIndex = cuisineGroupIndex * 6 + cuisineIndex;
     this.selectedCuisine[selectedIndex] = !this.selectedCuisine[selectedIndex];
     if (selectedIndex == 0 && this.selectedCuisine[0]) this.selectedCuisine = this.selectedCuisine.map((x) => true);
     if (selectedIndex != 0 && !this.selectedCuisine[selectedIndex]) this.selectedCuisine[0] = false;

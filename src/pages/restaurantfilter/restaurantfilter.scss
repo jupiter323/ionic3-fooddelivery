@@ -1,0 +1,60 @@
+page-restaurantfilter {
+    ion-content {
+        background: rgba($color: #000000, $alpha: 0.4) !important;
+        .default-padding {
+            padding: 5px 5px;
+        }
+        .sub-title {
+            padding-top: 10px;
+        }
+        .card-board {
+            text-align: unset !important;
+            height: unset !important;
+            margin-top: 2vh !important;
+            width: 95%!important;
+            margin-bottom: 10px;
+            padding-left: 10px!important;
+            padding-right: 10px!important;
+            .arrow-top {
+                svg {
+                    margin: auto;
+                }
+            }
+            .title {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: normal;
+                font-size: 22px;
+                letter-spacing: -0.41px;
+                color: #545454;
+            }
+            .sub-title {
+                font-family: Roboto;
+                font-style: normal;
+                font-weight: normal;
+                line-height: normal;
+                font-size: 14px!important;
+                letter-spacing: -0.24px;
+                color: #545454;
+            }
+            ion-slides {
+                height: 25vh;
+                width: 100%;
+                overflow: hidden;
+                .swiper-pagination-bullet {
+                    border: 1px solid #228D8C;
+                    background: white;
+                    opacity: 1;
+                }
+                .swiper-pagination-bullet-active {
+                    background: #228D8C;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

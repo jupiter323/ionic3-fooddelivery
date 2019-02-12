@@ -1,4 +1,4 @@
-page-favoritetab {
+page-editfavorite {
     ion-header.expand-header {
         height: 30vh;
     }
@@ -63,6 +63,7 @@ page-favoritetab {
     }
     ion-content {
         background: #E5E5E5 !important;
+        
         ion-slides {
             height: 28vh;
             width: 100%;
@@ -84,7 +85,7 @@ page-favoritetab {
             padding: 0 15px 15px 15px !important;
         }
         .scroll-content {
-            padding: 0 !important;
+            padding-top: 15px!important;
         }
         .restaurant-list {
             font-family: Roboto;

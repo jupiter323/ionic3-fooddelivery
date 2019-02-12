@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { RestaurantPage } from '../../restaurant/restaurant';
 import { GloabalProvider } from '../../../providers/gloabal/gloabal';
 
@@ -43,4 +43,5 @@ export class HometabPage {
     this.gs.setTabBarHiddentStatus(true);
     this.navCtrl.push(RestaurantPage, { restaurant: this.restaurantsList[index] });
   }
+
 }

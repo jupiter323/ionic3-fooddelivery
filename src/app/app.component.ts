@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform, Tabs } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
@@ -8,11 +8,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { ChangenamePage } from '../pages/tabs/profiletab/changename/changename';
 import { ChangenumberPage } from '../pages/tabs/profiletab/changenumber/changenumber';
 import { LoginPage } from '../pages/login/login';
+import { RestaurantfilterPage } from '../pages/restaurantfilter/restaurantfilter';
+import { OnboardingPage } from '../pages/onboarding/onboarding';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = LoginPage;
+  rootPage: any = TabsPage;
 
   constructor(
     public translate: TranslateService,

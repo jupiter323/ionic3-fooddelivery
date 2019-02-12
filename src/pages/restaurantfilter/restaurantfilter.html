@@ -1,0 +1,197 @@
+<!--
+  Generated template for the RestaurantfilterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content>
+  <div class="card-board">
+    <!-- arrow icon -->
+    <ion-row class="arrow-top">
+      <svg width="38" height="12" viewBox="0 0 38 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path opacity="0.596524" fill-rule="evenodd" clip-rule="evenodd" d="M33.4502 11.5641C34.7492 12.1148 36.2491 11.5094 36.8005 10.2105C37.3518 8.91171 36.7458 7.41171 35.4469 6.85995L19.7646 0.203703C19.19 -0.0404377 18.5761 -0.0580158 18.0223 0.110929C17.7592 0.13339 17.4968 0.196867 17.2406 0.305265L1.55832 6.96152C0.259405 7.51327 -0.346613 9.01327 0.204748 10.3121C0.756109 11.6109 2.25605 12.2164 3.55497 11.6656L18.6222 5.26913L33.4502 11.5641Z"
+          fill="#DDDDDD" />
+      </svg>
+    </ion-row>
+    <p></p>
+    <div class="title">Cuisine Type</div>
+    <ion-slides pager="true">
+      <ion-slide *ngFor="let cuisineGroup of cuisineCroupList;let cuisineGroupIndex=index">
+        <ion-row class="cuisine-row">
+          <ion-col col-4 *ngFor="let cuisine of cuisineGroup;let cuisineIndex=index">
+            <button ion-button [ngClass]="selectedCuisine[cuisineGroupIndex*6+cuisineIndex]?'selected-btn':'unselected-btn'"
+              (click)="selected(cuisineGroupIndex,cuisineIndex)">{{cuisine}}</button>
+          </ion-col>
+        </ion-row>
+      </ion-slide>
+    </ion-slides>
+    <div class="cross-line"></div>
+    <div class="title">Price</div>
+    <ion-row class="align-center space-between">
+      <ion-col col-6 no-padding>
+        <ion-row class="sub-title align-center" (click)="isLowestToHighest=false;isHighestToLowest=true">
+          <svg *ngIf="isHighestToLowest" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="!isHighestToLowest" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">Highest to Lowest</span>
+        </ion-row>
+      </ion-col>
+      <ion-col col-6 no-padding>
+        <ion-row class="sub-title align-center" (click)="isLowestToHighest=true;isHighestToLowest=false">
+          <svg *ngIf="isLowestToHighest" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="!isLowestToHighest" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">Lowest to Highest</span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <div class="cross-line"></div>
+    <div class="title">Payment Options</div>
+    <ion-row class="align-center space-between">
+      <ion-col col-4 no-padding>
+        <ion-row class="sub-title align-center" (click)="isCash=true;isZainCash=false;isCreditCard=false">
+          <svg *ngIf="isCash" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="!isCash" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">Cash</span>
+        </ion-row>
+      </ion-col>
+      <ion-col col-4 no-padding>
+        <ion-row class="sub-title align-center" (click)="isCash=false;isZainCash=true;isCreditCard=false">
+          <svg *ngIf="isZainCash" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="!isZainCash" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">ZainCash</span>
+        </ion-row>
+      </ion-col>
+      <ion-col col-4 no-padding>
+        <ion-row class="sub-title align-center" (click)="isCash=false;isZainCash=false;isCreditCard=true">
+          <svg *ngIf="isCreditCard" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="!isCreditCard" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">Credit Card</span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <div class="cross-line"></div>
+    <div class="title">Alphabetical Order</div>
+    <ion-row class="align-center space-between">
+      <ion-col col-6 no-padding>
+        <ion-row class="sub-title align-center" (click)="isAZ=true;isZA=false">
+          <svg *ngIf="isAZ" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="!isAZ" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">A - Z</span>
+        </ion-row>
+      </ion-col>
+      <ion-col col-6 no-padding>
+        <ion-row class="sub-title align-center" (click)="isAZ=false;isZA=true">
+          <svg *ngIf="isZA" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="!isZA" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">Z - A</span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <div class="cross-line"></div>
+    <div class="title">Rating</div>
+    <ion-row class="align-center space-between">
+      <ion-col col-6 no-padding>
+        <ion-row class="sub-title align-center" (click)="isHighToLowRate=true;isLowToHighRate=false">
+          <svg *ngIf="isHighToLowRate" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="!isHighToLowRate" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">High to Low</span>
+        </ion-row>
+      </ion-col>
+      <ion-col col-6 no-padding>
+        <ion-row class="sub-title align-center" (click)="isHighToLowRate=false;isLowToHighRate=true">
+          <svg *ngIf="isLowToHighRate" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#228D8C" />
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z"
+              fill="#228D8C" />
+          </svg>
+          <svg *ngIf="!isLowToHighRate" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 23C18.0751 23 23 18.0751 23 12C23 5.92487 18.0751 1 12 1C5.92487 1 1 5.92487 1 12C1 18.0751 5.92487 23 12 23Z"
+              stroke="#545454" />
+          </svg>
+          <span class="default-padding">Low to High</span>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+
+    <div class="cross-line"></div>
+    <ion-row class="item-row">
+      <ion-col col-9>
+        <ion-row>
+          <div class="title">Most Recommended</div>
+        </ion-row>
+      </ion-col>
+      <ion-toggle mode="ios"></ion-toggle>
+    </ion-row>
+  </div>
+  <ion-row class="default-padding">
+    <button ion-button class="normal-btn" (click)="closeModal()">Go</button>
+  </ion-row>
+
+
+</ion-content>

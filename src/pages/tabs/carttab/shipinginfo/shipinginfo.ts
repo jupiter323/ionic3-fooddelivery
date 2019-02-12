@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CheckoutconfirmPage } from '../checkoutconfirm/checkoutconfirm';
+import { AddressaddeditPage } from '../../../addressaddedit/addressaddedit';
 
 /**
  * Generated class for the ShipinginfoPage page.
@@ -32,6 +33,9 @@ export class ShipinginfoPage {
   }
   goCheckoutConfirm() {
     this.navCtrl.push(CheckoutconfirmPage);
+  }
+  goEditAddress() {
+    this.navCtrl.push(AddressaddeditPage, { isAddNewAddress: false, isEditAddress: true })
   }
 
 }
