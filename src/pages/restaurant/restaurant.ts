@@ -20,6 +20,7 @@ enum RESTAURANT_TAB {
   templateUrl: 'restaurant.html',
 })
 export class RestaurantPage {
+  isListView: boolean = true;
   restaurantTab = RESTAURANT_TAB;
   restaurant: Object;
   selectedCuisine = 0;

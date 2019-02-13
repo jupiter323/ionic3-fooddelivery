@@ -4,11 +4,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { OnboardingPage } from '../pages/onboarding/onboarding';
+import { RestaurantPage } from '../pages/restaurant/restaurant';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = OnboardingPage;
+  rootPage: any = RestaurantPage;
 
   constructor(
     public translate: TranslateService,

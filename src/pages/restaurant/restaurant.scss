@@ -118,7 +118,8 @@ page-restaurant {
                     font-size: 14px;
                 }
             }
-            ion-list {
+            ion-list,
+            .grid-view {
                 .name-des {
                     font-family: Roboto;
                     font-style: normal;
@@ -127,11 +128,9 @@ page-restaurant {
                     font-size: 14px;
                     letter-spacing: 0.282353px;
                     color: #545454;
-                    width: 1000px !important;
                 }
                 .jod {
                     text-align: right;
-                    width: 50px;
                     font-family: Roboto;
                     font-style: normal;
                     font-weight: normal;
@@ -142,6 +141,17 @@ page-restaurant {
                     span {
                         font-size: 16px;
                     }
+                }
+            }
+            .grid-view {
+                .cross-line {
+                    width: 94% !important;
+                }
+                .inner-wrap {
+                    border-right: 0.3px solid rgba($color: black, $alpha: 0.7);
+                }
+                .jod {
+                    text-align: left;
                 }
             }
         }
@@ -235,6 +245,22 @@ page-restaurant {
                 height: 34px !important;
                 border-radius: 17px !important;
             }
+        }
+    }
+    position: relative;
+    .list-card {
+        position: absolute;
+        background: rgba($color: #228D8C, $alpha: 0.8);
+        width: 8vh;
+        height: 8vh;
+        border-radius: 5vh;
+        bottom: 3vh;
+        right: 5vh;
+        ion-icon {
+            font-size: 22px;
+            font-weight: bold;
+            color: white;
+            margin: auto;
         }
     }
 }
